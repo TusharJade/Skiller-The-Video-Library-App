@@ -1,0 +1,97 @@
+.thumbnail-img{
+    width: 100%;
+}
+
+.short-description{
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.79rem;
+}
+
+.creater-name{
+    color: var(--grey);
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.premium-creator{
+   color: #787878;
+   font-size: 0.6rem;
+}
+
+.views{
+   color: var(--grey);
+   font-size: 0.75rem;
+}
+
+.dot{
+    font-size: 0.2rem;
+    margin-top: 0.2rem;
+}
+
+.three-dot{
+    color: var(--grey);
+    font-size: 0.9rem;
+}
+
+.thumnail-text-content{
+    width: 80%; 
+}
+
+.channel-logo{
+ width: 1.6rem;
+ height: 1.6rem;
+ border-radius: 50%;
+ margin-top: 0.2rem;
+}
+
+.last-line-thumbnail{
+    width: 6.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.all-thmbnail-content{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.video-thumbnail-box{
+    cursor: pointer;
+}
+
+.show-on-click{
+    display: block;
+}
+
+.hide-on-click{
+    display: none;
+}
+
+@media (max-width:1300px) {
+    .views{
+        color: var(--grey);
+        font-size: 0.7rem;
+     }
+     .dot{
+        font-size: 0.2rem;
+        margin-top: 0.2rem;
+    }
+    .thumnail-text-content{
+        width: 85%;
+    }
+}
+
+@media (max-width:800px){
+    .thumnail-text-content{
+        width: 77%;
+    }
+}
+
+@media (max-width:635px){
+    .thumnail-text-content{
+        width: 80%;
+    }
+}

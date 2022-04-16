@@ -5,7 +5,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    /* background-color: #181818; */
+}
+
+body{
+    background-color: #181818;
 }
 
 :root{
@@ -14,4 +17,5 @@
     --white:#ffffff;
     --page-bg:#181818;
     --navbar-hover:#323131;
+    --grey:grey;
 }

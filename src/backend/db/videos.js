@@ -3,19 +3,63 @@
  * You can add videos of your wish with different attributes
  * */
 
+import { v4 as uuid } from "uuid";
+
 export const videos = [
   {
-    _id: "Wo5dMEP_BbI",
+    _id: uuid(),
     title: "Awesome Video about Coding",
+    thumbnailImg: "https://img.youtube.com/vi/yEAQH1FQRSE/maxresdefault.jpg",
+    videoLink: "https://www.youtube.com/embed/yEAQH1FQRSE",
     description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-    creator: "Soham Shah",
+      "FREE MASTERCLASS on Camera Settings in HINDI | Photography Course DEMO Workshop |Mode dial EXPLAINED",
+    miniDescription: "FREE MASTERCLASS on Camera Settings in HINDI |..",
+    creatorsLogo:
+      "https://yt3.ggpht.com/ytc/AKedOLTi6lfAoFd_keBCfebNvnpVPR4QNTHcAAKqAANuNA=s88-c-k-c0x00ffffff-no-rj",
+    creator: "Photography Educators",
+    views: "22k",
+    time: "1 year",
   },
   {
-    _id: "F_Riqjdh2oM",
-    title: "Neural Networks from Scratch - P.1 Intro and Neuron Code",
-    creator: "Sentdex",
+    _id: uuid(),
+    title: "Awesome Video about Coding",
+    thumbnailImg: "https://img.youtube.com/vi/yEAQH1FQRSE/maxresdefault.jpg",
+    videoLink: "https://www.youtube.com/embed/yEAQH1FQRSE",
     description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+      "FREE MASTERCLASS on Camera Settings in HINDI | Photography Course DEMO Workshop |Mode dial EXPLAINED",
+    miniDescription: "FREE MASTERCLASS on Camera Settings in HINDI |..",
+    creatorsLogo:
+      "https://yt3.ggpht.com/ytc/AKedOLTi6lfAoFd_keBCfebNvnpVPR4QNTHcAAKqAANuNA=s88-c-k-c0x00ffffff-no-rj",
+    creator: "Photography Educators",
+    views: "22k",
+    time: "1 year",
+  },
+  {
+    _id: uuid(),
+    title: "Awesome Video about Coding",
+    thumbnailImg: "https://img.youtube.com/vi/yEAQH1FQRSE/maxresdefault.jpg",
+    videoLink: "https://www.youtube.com/embed/yEAQH1FQRSE",
+    description:
+      "FREE MASTERCLASS on Camera Settings in HINDI | Photography Course DEMO Workshop |Mode dial EXPLAINED",
+    miniDescription: "FREE MASTERCLASS on Camera Settings in HINDI |..",
+    creatorsLogo:
+      "https://yt3.ggpht.com/ytc/AKedOLTi6lfAoFd_keBCfebNvnpVPR4QNTHcAAKqAANuNA=s88-c-k-c0x00ffffff-no-rj",
+    creator: "Photography Educators",
+    views: "22k",
+    time: "1 year",
+  },
+  {
+    _id: uuid(),
+    title: "Awesome Video about Coding",
+    thumbnailImg: "https://img.youtube.com/vi/yEAQH1FQRSE/maxresdefault.jpg",
+    videoLink: "https://www.youtube.com/embed/yEAQH1FQRSE",
+    description:
+      "FREE MASTERCLASS on Camera Settings in HINDI | Photography Course DEMO Workshop |Mode dial EXPLAINED",
+    miniDescription: "FREE MASTERCLASS on Camera Settings in HINDI |..",
+    creatorsLogo:
+      "https://yt3.ggpht.com/ytc/AKedOLTi6lfAoFd_keBCfebNvnpVPR4QNTHcAAKqAANuNA=s88-c-k-c0x00ffffff-no-rj",
+    creator: "Photography Educators",
+    views: "22k",
+    time: "1 year",
   },
 ];

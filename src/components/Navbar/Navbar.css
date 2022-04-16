@@ -1,18 +1,21 @@
 .main-logo{
-    width: 2.85rem;
+    width: 2.55rem;
     background-color: var(--navbar-bg);
 }
 
 .skiller{
     font-weight: 600;
-    font-size: 2.1rem;
+    font-size: 1.8rem;
     color: var(--main-orange);
+    margin-left: 0.25rem;
+    background-color: var(--navbar-bg);
 }
 
 .skiller-outerbox{
     display: flex;
     align-items: center;
     cursor: pointer;
+    background-color: var(--navbar-bg);
 }
 
 .main-navbar{
@@ -22,9 +25,9 @@
     align-items: center;
     justify-content: space-around;
     height: 4.5rem;
+    width: 100%;
     position: fixed;
-    right: 0;
-    left: 0;
+    top: 0;
     z-index: 99;
 }
 
@@ -59,6 +62,10 @@
     background-color:#27262b;
     margin-top: 0.1rem;
     cursor: pointer;
+}
+
+.search-outerbox{
+    background-color: var(--navbar-bg);
 }
 
 @media(max-width: 944px){
