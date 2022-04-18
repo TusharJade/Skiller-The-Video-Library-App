@@ -25,7 +25,7 @@ const Sidebar = () => {
           <div className="sidebar-icn-name">History</div>
         </li>
         <li className="list-sidebar profile">
-          <i class="fa-solid fa-user sider-icn"></i>
+          <i className="fa-solid fa-user sider-icn"></i>
           <div className="sidebar-icn-name">Profile</div>
         </li>
       </ul>

@@ -1,97 +1,153 @@
-.thumbnail-img{
-    width: 100%;
+.thumbnail-img {
+  width: 100%;
 }
 
-.short-description{
-    color: var(--white);
-    font-weight: 600;
-    font-size: 0.79rem;
+.short-description {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 0.79rem;
 }
 
-.creater-name{
+.creater-name {
+  color: var(--grey);
+  font-size: 0.73rem;
+  font-weight: 500;
+}
+
+.premium-creator {
+  color: #787878;
+  font-size: 0.62rem;
+}
+
+.views {
+  color: var(--grey);
+  font-size: 0.75rem;
+}
+
+.dot {
+  font-size: 0.2rem;
+  margin: 0rem 0.5rem;
+}
+
+.three-dot {
+  color: var(--white);
+  font-size: 0.9rem;
+  width: 0.6rem;
+  height: 1.3rem;
+  text-align: right;
+  cursor: pointer;
+}
+
+.thumnail-text-content {
+  width: 80%;
+}
+
+.channel-logo {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  margin-top: 0.2rem;
+}
+
+.last-line-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.all-thmbnail-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+}
+
+.toggle-menu {
+  position: absolute;
+  color: var(--white);
+  font-size: 0.88rem;
+  font-weight: 400;
+  background-color: #262626;
+  border-radius: 0.5rem;
+  top: 1.1rem;
+  right: 0.2rem;
+}
+
+.add {
+  margin-right: 0.3rem;
+}
+
+.hover-Effect {
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.6rem 0.25rem 0.6rem;
+}
+
+.hover-Effect:hover {
+  background-color: #373737;
+}
+
+.video-thumbnail-box {
+  cursor: pointer;
+}
+
+.show-on-click {
+  display: block;
+}
+
+.hide-on-click {
+  display: none;
+}
+
+@media (max-width: 1300px) {
+  .views {
     color: var(--grey);
-    font-size: 0.7rem;
-    font-weight: 500;
-}
+    font-size: 0.72rem;
+  }
 
-.premium-creator{
-   color: #787878;
-   font-size: 0.6rem;
-}
-
-.views{
-   color: var(--grey);
-   font-size: 0.75rem;
-}
-
-.dot{
+  .dot {
     font-size: 0.2rem;
     margin-top: 0.2rem;
+  }
+
+  .thumnail-text-content {
+    width: 80%;
+  }
 }
 
-.three-dot{
+@media (max-width: 800px) {
+  .thumnail-text-content {
+    width: 79%;
+  }
+}
+
+@media (max-width: 635px) {
+  .thumnail-text-content {
+    width: 80%;
+  }
+
+  .short-description {
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  .creater-name {
     color: var(--grey);
-    font-size: 0.9rem;
-}
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
 
-.thumnail-text-content{
-    width: 80%; 
-}
+  .views {
+    color: var(--grey);
+    font-size: 0.8rem;
+  }
 
-.channel-logo{
- width: 1.6rem;
- height: 1.6rem;
- border-radius: 50%;
- margin-top: 0.2rem;
-}
+  .dot{
+    font-size: 0.25rem;
+    margin: 0rem 0.5rem;
+  }
 
-.last-line-thumbnail{
-    width: 6.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.all-thmbnail-content{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.video-thumbnail-box{
-    cursor: pointer;
-}
-
-.show-on-click{
-    display: block;
-}
-
-.hide-on-click{
-    display: none;
-}
-
-@media (max-width:1300px) {
-    .views{
-        color: var(--grey);
-        font-size: 0.7rem;
-     }
-     .dot{
-        font-size: 0.2rem;
-        margin-top: 0.2rem;
-    }
-    .thumnail-text-content{
-        width: 85%;
-    }
-}
-
-@media (max-width:800px){
-    .thumnail-text-content{
-        width: 77%;
-    }
-}
-
-@media (max-width:635px){
-    .thumnail-text-content{
-        width: 80%;
-    }
+  .channel-logo {
+      width: 2.3rem;
+      height: 2.3rem;
+  }
 }

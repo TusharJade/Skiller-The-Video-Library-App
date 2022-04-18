@@ -11,6 +11,10 @@ body{
     background-color: #181818;
 }
 
+.Link{
+    text-decoration: none;
+}
+
 :root{
     --navbar-bg:#222222;
     --main-orange:#ff9041;

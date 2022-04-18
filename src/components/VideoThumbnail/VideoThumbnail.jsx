@@ -17,15 +17,21 @@ const VideoThumbnail = ({ video }) => {
           alt="img-error"
         />
         <div className="thumnail-text-content">
-          <div className="short-description">{video.miniDescription}</div>
+          <div className="short-description">
+            {video.description.length > 40
+              ? `${video.description.substring(0, 44)}...`
+              : video.description}
+          </div>
           <div className="creater-name">
             {video.creator}{" "}
-            <i class="fa-solid fa-circle-check premium-creator"></i>
+            {video.premiumCreator ? (
+              <i className="fa-solid fa-circle-check premium-creator"></i>
+            ) : null}
           </div>
           <div className="last-line-thumbnail">
             <div className="views">{video.views} views</div>
-            <i class="fa-solid fa-circle dot views"></i>
-            <div className="views">{video.time}</div>
+            <i className="fa-solid fa-circle dot views"></i>
+            <div className="views">{video.time} ago</div>
           </div>
         </div>
         <div
@@ -34,8 +40,18 @@ const VideoThumbnail = ({ video }) => {
             setShowOnClick(!showOnClick);
           }}
         >
-          <i class="fa-solid fa-ellipsis-vertical"></i>
+          <i className="fa-solid fa-ellipsis-vertical"></i>
         </div>
+        {showOnClick && (
+          <div className="toggle-menu">
+            <div className="hover-Effect">
+              <i class="fa-solid fa-clock add"></i>Add to Watch Later
+            </div>
+            <div className="hover-Effect">
+              <i class="fa-solid fa-circle-plus add"></i>Add to Playlist
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

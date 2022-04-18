@@ -88,7 +88,7 @@
         display: flex;
         justify-content: space-around;
         height: 4.5rem;
-        width: auto; 
+        width: auto;
     }
 
     .hide{
@@ -100,6 +100,19 @@
     }
 
     .list-sidebar:hover{
+        color:var(--main-orange);
         background-color: var(--navbar-bg);
+    }
+
+    .list-sidebar:hover .sidebar-icn-name{
+        background-color: var(--navbar-bg);
+    }
+    
+    .list-sidebar:hover .sider-icn{
+        background-color: var(--navbar-bg);
+    }
+
+    .list-sidebar{
+         margin: 0rem 2.8rem;
     }
 }
