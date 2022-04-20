@@ -12,8 +12,6 @@ const SingleVideoPage = () => {
 
   const singleVideoData = singleVideoFunc(video, videoId);
 
-  console.log(singleVideoData);
-
   return <section className="single-video-outerbox"></section>;
 };
 
