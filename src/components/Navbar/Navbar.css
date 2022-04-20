@@ -1,5 +1,6 @@
 .main-logo{
     width: 2.55rem;
+    margin-left: 2.3rem;
     background-color: var(--navbar-bg);
 }
 
@@ -23,7 +24,7 @@
     color: var(--white);
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 4.5rem;
     width: 100%;
     position: fixed;
@@ -40,10 +41,11 @@
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
+    margin-right: 2.5rem;
 }
 
 .nav-input{
-    width: 28rem;
+    width: 30rem;
     background-color:#27262b;
     border: 1px solid #35312b;
     padding: 0.5rem 1rem;
@@ -69,11 +71,24 @@
 }
 
 @media(max-width: 944px){
+    .main-logo{
+        margin: 0;
+    }
+
+    .login-btn{
+        margin: 0;
+    }
+
     .nav-input{
         width: 12rem;
     }
+
     .main-logo{
         width: 2rem;
+    }
+
+    .main-navbar{
+        justify-content: space-around;
     }
     
     .skiller{

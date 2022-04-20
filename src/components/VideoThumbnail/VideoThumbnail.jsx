@@ -1,10 +1,20 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./VideoThumbnail.css";
 
 const VideoThumbnail = ({ video }) => {
-  const [showOnClick, setShowOnClick] = useState(false);
+  const [showOnClick, setShowOnClick] = useState({
+    modal: false,
+    modalPlaylist: false,
+  });
+
+  const navigate = useNavigate();
+
   return (
-    <div className="video-thumbnail-box">
+    <div
+      className="video-thumbnail-box"
+      onClick={() => navigate(`/video/${video._id}`)}
+    >
       <img
         className="thumbnail-img"
         src={video.thumbnailImg}
@@ -37,12 +47,12 @@ const VideoThumbnail = ({ video }) => {
         <div
           className="three-dot"
           onClick={() => {
-            setShowOnClick(!showOnClick);
+            setShowOnClick((item) => ({ ...item, modal: !item.modal }));
           }}
         >
           <i className="fa-solid fa-ellipsis-vertical"></i>
         </div>
-        {showOnClick && (
+        {showOnClick.modal && (
           <div className="toggle-menu">
             <div className="hover-Effect">
               <i class="fa-solid fa-clock add"></i>Add to Watch Later

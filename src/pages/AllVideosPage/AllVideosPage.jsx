@@ -9,10 +9,6 @@ const AllVideosPage = () => {
 
   const [videoState, setVideoState] = useState("");
 
-  const [videoCategoryBg, setVideoCategoryBg] = useState({
-    objOne: true,
-  });
-
   const filterByCategory = (video, videoState) => {
     return videoState === ""
       ? video
@@ -27,79 +23,59 @@ const AllVideosPage = () => {
       <section className="main-video-pagebox">
         <div className="category-filter-box">
           <button
-            className={`btn-by-filter ${
-              videoCategoryBg.objOne ? "onselect" : null
-            }`}
+            className={`btn-by-filter ${videoState === "" ? "onselect" : null}`}
             onClick={() => {
               setVideoState("");
-              setVideoCategoryBg({
-                objOne: true,
-              });
             }}
           >
             All
           </button>
           <button
             className={`btn-by-filter ${
-              videoCategoryBg.objTwo ? "onselect" : null
+              videoState === "communication" ? "onselect" : null
             }`}
             onClick={() => {
               setVideoState("communication");
-              setVideoCategoryBg({
-                objTwo: true,
-              });
             }}
           >
             Communication
           </button>
           <button
             className={`btn-by-filter ${
-              videoCategoryBg.objThree ? "onselect" : null
+              videoState === "video editing" ? "onselect" : null
             }`}
             onClick={() => {
               setVideoState("video editing");
-              setVideoCategoryBg({
-                objThree: true,
-              });
             }}
           >
             Video Editing
           </button>
           <button
             className={`btn-by-filter ${
-              videoCategoryBg.objFour ? "onselect" : null
+              videoState === "photography" ? "onselect" : null
             }`}
             onClick={() => {
               setVideoState("photography");
-              setVideoCategoryBg({
-                objFour: true,
-              });
             }}
           >
             Photography
           </button>
           <button
             className={`btn-by-filter ${
-              videoCategoryBg.objFive ? "onselect" : null
+              videoState === "graphic design" ? "onselect" : null
             }`}
             onClick={() => {
               setVideoState("graphic design");
-              setVideoCategoryBg({
-                objFive: true,
-              });
             }}
           >
             Graphic Design
           </button>
           <button
             className={`btn-by-filter ${
-              videoCategoryBg.objSix ? "onselect" : null
+              videoState === "sales" ? "onselect" : null
             }`}
             onClick={() => {
               setVideoState("sales");
-              setVideoCategoryBg({
-                objSix: true,
-              });
             }}
           >
             Sales
