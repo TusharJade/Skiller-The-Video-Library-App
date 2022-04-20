@@ -1,0 +1,16 @@
+.single-video-outerbox{
+    margin: 4.5rem 0rem 0rem 14rem;
+}
+
+@media (max-width:1200px) {
+    .single-video-outerbox{
+        margin-left: 6.5rem;
+    }
+}
+
+@media (max-width:637px) {
+    .single-video-outerbox{
+        margin-left: 0;
+    }
+    
+}
