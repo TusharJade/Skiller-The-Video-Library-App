@@ -1,0 +1,53 @@
+.horizontal-outerbox{
+    display: flex;
+    width: 100%;
+}
+
+.horizontal-img-box{
+    width: 50%;
+    margin-bottom: 0.7rem;
+}
+
+.horizontal-all-detail{
+   margin-left: 0.5rem;
+}
+
+.horizontal-video-des{
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 0.3rem;
+}
+
+.horizontal-creator-name{
+    color: var(--grey);
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+}
+
+.horizon-creator{
+    color: var(--grey);
+    font-size: 0.7rem;
+}
+
+.horizontal-card-lastline{
+    display: flex;
+    align-items: center;
+    font-size: 0.68rem;
+    margin-top: 0.1rem;
+    color: var(--grey);
+}
+
+.horizontal-dot{
+    font-size: 0.2rem;
+    margin: 0.2rem 0.35rem 0 0.35rem;
+}
+
+@media (max-width:1200px) {
+    .horizontal-img-box{
+        width: 40%;
+    }
+    .horizontal-outerbox{
+        width: 100%;
+    }
+}

@@ -1,0 +1,43 @@
+import "./SingleVideo.css";
+
+const SingleVideo = ({ item }) => {
+  return (
+    <div className="single-video-playbox-final">
+      <div className="video-iframe">
+        <iframe
+          width="100%"
+          height="100%"
+          src={item.videoLink}
+          frameborder="0"
+          title="YouTube video player"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div className="single-page-category"># {item.category}</div>
+      <div className="single-video-description">{item.description}</div>
+      <div className="single-video-lastline-box">
+        <div className="single-video-parent-btn">
+          <i class="fa-solid fa-heart single-video-heart"></i>
+          <span>&nbsp; Like</span>
+        </div>
+        <div className="single-video-parent-btn">
+          <i class="fa-solid fa-clock add"></i>
+          <span> Watch Later</span>
+        </div>
+        <div className="single-video-parent-btn">
+          <i class="fa-solid fa-folder-plus"></i>
+          <span> &nbsp;Save</span>
+        </div>
+        <div
+          onClick={() => navigator.clipboard.writeText(`${item.videoLink}`)}
+          className="single-video-parent-btn"
+        >
+          <i class="fa-solid fa-clipboard"></i>
+          <span> &nbsp;Copy Link</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { SingleVideo };

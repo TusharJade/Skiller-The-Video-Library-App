@@ -1,0 +1,49 @@
+.single-video-outerbox {
+    margin: 4.5rem 0 0 14rem;
+    display: flex;
+    column-gap: 1rem;
+}
+
+.single-video-premiumbox {
+    width: 65%;
+}
+
+.horizon-cards-box {
+    width: 35%;
+}
+
+.suggested-video-text{
+    text-align: start;
+    font-size: 1.1rem;
+    color: var(--main-orange);
+    font-weight: 600;
+    margin: 0.5rem 0 ;
+}
+
+@media (max-width:1200px) {
+
+    .single-video-outerbox {
+        margin-left: 6.5rem;
+        flex-direction: column;
+    }
+
+    .single-video-premiumbox {
+        width: 100%;
+    }
+
+    .horizon-cards-box {
+        width: 100%;
+        padding: 0.5rem 0.7rem;
+
+    }
+}
+
+@media (max-width:637px) {
+    .single-video-outerbox {
+        margin-left: 0;
+    }
+
+    .horizon-cards-box {
+        padding: 0.4rem 0.7rem 4.5rem 0.7rem;
+    }
+}

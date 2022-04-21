@@ -18,7 +18,8 @@ export const videos = [
     premiumCreator: true,
     category: "photography",
     views: "666k",
-    time: "4 year",
+    time: "6 year",
+    date: "13 Jun 2016",
   },
   {
     _id: uuid(),
@@ -32,7 +33,8 @@ export const videos = [
     premiumCreator: true,
     category: "photography",
     views: "301k",
-    time: "4 year",
+    time: "6 year",
+    date: "17 sep 2016",
   },
   {
     _id: uuid(),
@@ -45,7 +47,8 @@ export const videos = [
     premiumCreator: true,
     category: "photography",
     views: "1.2M",
-    time: "3 years",
+    time: "6 year",
+    date: "11 May 2016",
   },
   {
     _id: uuid(),
@@ -60,6 +63,7 @@ export const videos = [
     category: "photography",
     views: "1.2M",
     time: "3 years",
+    date: "11 May 2019",
   },
   {
     _id: uuid(),
@@ -74,6 +78,7 @@ export const videos = [
     category: "photography",
     views: "2.3M",
     time: "2 years",
+    date: "20 Dec 2016",
   },
   {
     _id: uuid(),
