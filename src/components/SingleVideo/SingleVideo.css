@@ -8,7 +8,7 @@
 }
 
 .single-page-category {
-    padding: 0.3rem 0rem 0rem 1rem;
+    padding: 0.3rem 0 0 1rem;
     color: var(--main-orange);
     font-size: 0.8rem;
 }
@@ -16,7 +16,7 @@
 .single-video-description {
     font-size: 1rem;
     font-weight: 600;
-    padding: 0.1rem 0rem 0rem 1rem;
+    padding: 0.1rem 0 0 1rem;
     color: var(--white);
     width: 100%;
 }
@@ -27,7 +27,7 @@
     align-items: center;
     width: 31rem;
     color: #e8e6e3;
-    margin: 0.6rem 0rem 0rem 0.8rem;
+    margin: 0.6rem 0 0 0.8rem;
 }
 
 .single-video-parent-btn {
@@ -58,7 +58,7 @@
         width: auto;
         flex-wrap: wrap;
         justify-content: flex-start;
-        margin: 0.6rem 0rem 0rem 0.4rem;
+        margin: 0.6rem 0 0 0.4rem;
     }
 
     .single-video-parent-btn {

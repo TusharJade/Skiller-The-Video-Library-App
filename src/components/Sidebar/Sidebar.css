@@ -15,7 +15,7 @@
 
 .list-sidebar{
     cursor: pointer;
-    padding: 0.8rem 0rem 0.8rem 0rem;
+    padding: 0.8rem 0 0.8rem 0;
     background-color: var(--navbar-bg);
 }
 

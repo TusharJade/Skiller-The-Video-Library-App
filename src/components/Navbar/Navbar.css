@@ -49,7 +49,7 @@
     background-color:#27262b;
     border: 1px solid #35312b;
     padding: 0.5rem 1rem;
-    border-radius: 0.5rem 0rem 0rem 0.5rem;
+    border-radius: 0.5rem 0 0 0.5rem;
     color: var(--white);
 }
 
@@ -60,7 +60,7 @@
 .nav-search{
     padding: 0.55rem 0.8rem 0.7rem 0.8rem;
     border: 1px solid #35312b; 
-    border-radius:  0rem 0.5rem 0.5rem 0rem;
+    border-radius:  0 0.5rem 0.5rem 0;
     background-color:#27262b;
     margin-top: 0.1rem;
     cursor: pointer;

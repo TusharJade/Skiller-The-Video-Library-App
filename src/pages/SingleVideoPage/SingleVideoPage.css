@@ -1,5 +1,5 @@
 .single-video-outerbox {
-    margin: 4.5rem 0rem 0rem 14rem;
+    margin: 4.5rem 0 0 14rem;
     display: flex;
     column-gap: 1rem;
 }
@@ -17,7 +17,7 @@
     font-size: 1.1rem;
     color: var(--main-orange);
     font-weight: 600;
-    margin: 0.5rem 0rem ;
+    margin: 0.5rem 0 ;
 }
 
 @media (max-width:1200px) {
