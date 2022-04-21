@@ -2,17 +2,17 @@ import "./SingleVideo.css";
 
 const SingleVideo = ({ item }) => {
   return (
-    <div className="single-video-playbox">
-      <iframe
-        className="single-video-play"
-        width="750"
-        height="400"
-        src={item.videoLink}
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+    <div className="single-video-playbox-final">
+      <div className="video-iframe">
+        <iframe
+          width="100%"
+          height="100%"
+          src={item.videoLink}
+          frameborder="0"
+          title="YouTube video player"
+          allowfullscreen
+        ></iframe>
+      </div>
       <div className="single-page-category"># {item.category}</div>
       <div className="single-video-description">{item.description}</div>
       <div className="single-video-lastline-box">
@@ -28,7 +28,10 @@ const SingleVideo = ({ item }) => {
           <i class="fa-solid fa-folder-plus"></i>
           <span> &nbsp;Save</span>
         </div>
-        <div className="single-video-parent-btn">
+        <div
+          onClick={() => navigator.clipboard.writeText(`${item.videoLink}`)}
+          className="single-video-parent-btn"
+        >
           <i class="fa-solid fa-clipboard"></i>
           <span> &nbsp;Copy Link</span>
         </div>
@@ -36,7 +39,5 @@ const SingleVideo = ({ item }) => {
     </div>
   );
 };
-
-// onClick={() => navigator.clipboard.writeText(`${item.videoLink}`)}
 
 export { SingleVideo };
