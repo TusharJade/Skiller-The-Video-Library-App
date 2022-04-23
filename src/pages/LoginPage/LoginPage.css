@@ -1,0 +1,96 @@
+.login-outerbox{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-container{
+   width: 30rem;
+   border: 1px solid var(--border);
+   border-radius: 0.5rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.login-text{
+    font-size: 1.7rem;
+    color: var(--main-orange);
+    font-weight: 400;
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+}
+
+.input-container{
+    color: var(--grey);
+    display: flex;
+    flex-direction: column;
+    margin: 0 3rem;
+}
+
+.login-heading{
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.input-feild{
+    background-color: var(--page-bg);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+}
+
+.password-container{
+    margin-top: 0.7rem;
+}
+
+.guest-login-btn{
+    border: none;
+    margin: 0 3rem;
+    background-color: var(--main-orange);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.login-skiller{
+    margin-bottom: 0;
+}
+
+.or-text{
+    color: var(--grey);
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.new-text{
+    color: var(--grey);
+    text-align: center;
+    margin: 1.3rem 0 2.4rem 0;
+    font-size: 0.93rem;
+}
+
+.signup-text{
+    color: var(--main-orange);
+    cursor: pointer;
+}
+
+.singup-gap{
+    margin-top: 1.1rem;
+}
+
+@media (max-width:1200px) {
+    .sidebar-box{
+        display: none;
+    }
+}
+
+@media (max-width:637px) {
+    .sidebar-box{
+        display: flex;
+    }
+}
