@@ -1,4 +1,4 @@
-.liked-margins {
+.filter-margins {
     margin: 4.5rem 0 0 14rem;
 }
 
@@ -18,7 +18,7 @@
 }
 
 @media (max-width:1200px) {
-    .liked-margins {
+    .filter-margins {
         margin-left: 6.5rem;
     }
 
@@ -37,7 +37,7 @@
 }
 
 @media (max-width:637px){
-    .liked-margins {
+    .filter-margins {
         margin-left: 0;
     }
 

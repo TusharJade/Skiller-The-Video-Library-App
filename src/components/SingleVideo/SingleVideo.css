@@ -42,6 +42,10 @@
     color: var(--red);
 }
 
+.colorful-watch{
+    color: var(--blue);
+}
+
 @media (max-width:1200px) {
     .single-video-play {
         width: 100%;

@@ -16,6 +16,19 @@ const globalFilterFun = (globalFilterDispach, action) => {
           (video) => video._id !== action.payload
         ),
       };
+    case "Add to Watch Later":
+      return {
+        ...globalFilterDispach,
+        watchLater: [...globalFilterDispach.watchLater, action.payload],
+      };
+
+    case "Remove From Watch Later":
+      return {
+        ...globalFilterDispach,
+        watchLater: globalFilterDispach.watchLater.filter(
+          (video) => video._id !== action.payload
+        ),
+      };
 
     default:
       return globalFilterDispach;

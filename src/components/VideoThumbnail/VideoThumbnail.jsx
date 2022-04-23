@@ -13,7 +13,7 @@ const VideoThumbnail = ({ video }) => {
   return (
     <div
       className="video-thumbnail-box"
-      onClick={() => navigate(`/video/${video._id}`)}
+      onClick={(e) => navigate(`/video/${video._id}`)}
     >
       <img
         className="thumbnail-img"
@@ -46,8 +46,9 @@ const VideoThumbnail = ({ video }) => {
         </div>
         <div
           className="three-dot"
-          onClick={() => {
+          onClick={(e) => {
             setShowOnClick((item) => ({ ...item, modal: !item.modal }));
+            e.stopPropagation();
           }}
         >
           <i className="fa-solid fa-ellipsis-vertical"></i>

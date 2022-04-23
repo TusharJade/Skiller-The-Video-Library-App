@@ -44,15 +44,33 @@ const SingleVideo = ({ item }) => {
           </div>
         )}
 
-        <div
-          className="single-video-parent-btn"
-          onClick={() =>
-            globalFilterDispach({ type: "Add to Watch Later", payload: item })
-          }
-        >
-          <i class="fa-solid fa-clock add"></i>
-          <span> Watch Later</span>
-        </div>
+        {globalFilterState.watchLater.find(
+          (video) => video._id === item._id
+        ) ? (
+          <div
+            className="single-video-parent-btn"
+            onClick={() =>
+              globalFilterDispach({
+                type: "Remove From Watch Later",
+                payload: item._id,
+              })
+            }
+          >
+            <i class="fa-solid fa-clock add colorful-watch"></i>
+            <span> Watch Later</span>
+          </div>
+        ) : (
+          <div
+            className="single-video-parent-btn"
+            onClick={() =>
+              globalFilterDispach({ type: "Add to Watch Later", payload: item })
+            }
+          >
+            <i class="fa-solid fa-clock add"></i>
+            <span> Watch Later</span>
+          </div>
+        )}
+
         <div className="single-video-parent-btn">
           <i class="fa-solid fa-folder-plus"></i>
           <span> &nbsp;Save</span>

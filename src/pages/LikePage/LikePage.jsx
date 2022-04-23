@@ -8,12 +8,12 @@ const LikePage = () => {
   return (
     <>
       <Sidebar />
-      <div className="liked-margins">
+      <div className="filter-margins">
         <div className="like-counter">
           <div className="liked-text">Liked</div>
           <div className="liked-video-num">
             {globalFilterState.like.length}{" "}
-            {globalFilterState.length === 0 ? "video" : "videos"}
+            {globalFilterState.like.length <= 1 ? "video" : "videos"}
           </div>
         </div>
         <div className="video-outer-grid">
