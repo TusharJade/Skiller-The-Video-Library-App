@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalFilterContext } from "../../context/globle-filters-context";
-import "./VideoThumbnail.css";
 
-const VideoThumbnail = ({ video }) => {
+const HisoryCard = ({ video }) => {
   const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();
 
-  const [showOnClick, setShowOnClick] = useState({
-    modal: false,
-    modalPlaylist: false,
-  });
+  const [showOnClick, setShowOnClick] = useState(false);
 
   const navigate = useNavigate();
 
@@ -53,74 +49,30 @@ const VideoThumbnail = ({ video }) => {
         <div
           className="three-dot"
           onClick={(e) => {
-            setShowOnClick((item) => ({ ...item, modal: !item.modal }));
+            setShowOnClick((item) => !item);
             e.stopPropagation();
           }}
         >
           <i className="fa-solid fa-ellipsis-vertical"></i>
         </div>
-        {showOnClick.modal && (
+        {showOnClick && (
           <div className="toggle-menu">
-            {globalFilterState.watchLater.find(
+            {globalFilterState.history.find(
               (item) => item._id === video._id
             ) ? (
               <div
-                className="hover-Effect delete-red-color"
+                className="hover-Effect remove-from-history"
                 onClick={(e) => {
+                  e.stopPropagation();
                   globalFilterDispach({
-                    type: "Remove From Watch Later",
+                    type: "Remove from History",
                     payload: video._id,
                   });
-                  e.stopPropagation();
                 }}
               >
-                <i className="fa-solid fa-trash add"></i>
-                Remove from Watch Later
+                <i className="fa-solid fa-trash add"></i>Remove from History
               </div>
-            ) : (
-              <div
-                className="hover-Effect"
-                onClick={(e) => {
-                  globalFilterDispach({
-                    type: "Add to Watch Later",
-                    payload: video,
-                  });
-                  e.stopPropagation();
-                }}
-              >
-                <i class="fa-solid fa-clock add"></i>
-                Add to Watch Later
-              </div>
-            )}
-
-            <div className="hover-Effect">
-              <i class="fa-solid fa-circle-plus add"></i>Add to Playlist
-            </div>
-
-            {globalFilterState.like.find((item) => item._id === video._id) ? (
-              <div
-                className="hover-Effect remove-like-color"
-                onClick={(e) => {
-                  globalFilterDispach({
-                    type: "Remove From Like",
-                    payload: video._id,
-                  });
-                  e.stopPropagation();
-                }}
-              >
-                <i class="fa-solid fa-heart add"></i>Remove from Like
-              </div>
-            ) : (
-              <div
-                className="hover-Effect"
-                onClick={(e) => {
-                  globalFilterDispach({ type: "Add to Like", payload: video });
-                  e.stopPropagation();
-                }}
-              >
-                <i class="fa-solid fa-heart add"></i>Like
-              </div>
-            )}
+            ) : null}
           </div>
         )}
       </div>
@@ -128,4 +80,4 @@ const VideoThumbnail = ({ video }) => {
   );
 };
 
-export { VideoThumbnail };
+export { HisoryCard };

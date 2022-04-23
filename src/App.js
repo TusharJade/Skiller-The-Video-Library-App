@@ -5,8 +5,11 @@ import { SingleVideoPage } from "./pages/SingleVideoPage/SingleVideoPage";
 import { LikePage } from "./pages/LikePage/LikePage";
 import { WatchLaterPage } from "./pages/WatchLaterPage/WatchLaterPage";
 import { HistoryPage } from "./pages/HistoryPage/HistoryPage";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
+import { SignupPage } from "./pages/SignupPage/SignupPage";
 import { Route, Routes } from "react-router-dom";
 import MockmanEs from "mockman-js";
+import { PlaylistPage } from "./pages/PlaylistPage/PlaylistPage";
 
 function App() {
   return (
@@ -17,7 +20,10 @@ function App() {
         <Route path="/like" element={<LikePage />} />
         <Route path="/watch-later" element={<WatchLaterPage />} />
         <Route path="/history" element={<HistoryPage />} />
+        <Route path="/playlist" element={<PlaylistPage />} />
         <Route path="/video/:videoId" element={<SingleVideoPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
         <Route path="/mockman" element={<MockmanEs />} />
       </Routes>
     </div>

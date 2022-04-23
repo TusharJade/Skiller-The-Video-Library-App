@@ -12,7 +12,9 @@ const Navbar = () => {
         <input type="text" placeholder="Search here" className="nav-input" />
         <i className="fas fa-search nav-search"></i>
       </div>
-      <button className="login-btn">Login</button>
+      <Link className="login-btn Link" to="/login">
+        Login
+      </Link>
     </header>
   );
 };

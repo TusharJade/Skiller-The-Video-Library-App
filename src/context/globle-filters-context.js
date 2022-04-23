@@ -29,7 +29,24 @@ const globalFilterFun = (globalFilterDispach, action) => {
           (video) => video._id !== action.payload
         ),
       };
-
+    case "Add to History":
+      return {
+        ...globalFilterDispach,
+        history: globalFilterDispach.history.find(
+          (video) => video._id === action.payload._id
+        )
+          ? [...globalFilterDispach.history]
+          : [...globalFilterDispach.history, action.payload],
+      };
+    case "Remove from History":
+      return {
+        ...globalFilterDispach,
+        history: globalFilterDispach.history.filter(
+          (video) => video._id !== action.payload
+        ),
+      };
+    case "Clear History":
+      return { ...globalFilterDispach, history: [] };
     default:
       return globalFilterDispach;
   }

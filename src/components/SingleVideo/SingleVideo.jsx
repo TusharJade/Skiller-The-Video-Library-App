@@ -30,7 +30,7 @@ const SingleVideo = ({ item }) => {
             }
           >
             <i class="fa-solid fa-heart single-video-heart colorful-heart"></i>
-            <span>&nbsp; Liked</span>
+            <span>&nbsp; Like</span>
           </div>
         ) : (
           <div

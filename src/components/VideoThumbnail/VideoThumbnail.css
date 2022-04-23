@@ -93,12 +93,16 @@
   cursor: pointer;
 }
 
-.show-on-click {
-  display: block;
+.delete-red-color {
+ color: var(--red);
 }
 
-.hide-on-click {
-  display: none;
+.remove-like-color{
+  color: var(--red);
+}
+
+.remove-from-history{
+  color: var(--red);
 }
 
 @media (max-width: 1300px) {
