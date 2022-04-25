@@ -1,0 +1,28 @@
+.trash-playlist-text{
+    color: var(--red);
+}
+
+.playlist-num{
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.516);
+    bottom: 6px;
+    right: 0;
+    left: 58%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.playlist-videos-num{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(172, 172, 172);
+}
+
+.video-playlist-play{
+   width: 2.2rem;
+   margin-left: 0.4rem;
+   filter: opacity(0.4) drop-shadow(0 0 0 rgba(255, 255, 255, 0.499)); 
+}

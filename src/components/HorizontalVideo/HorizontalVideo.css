@@ -1,6 +1,7 @@
 .horizontal-outerbox{
     display: flex;
     width: 100%;
+    cursor: pointer;
 }
 
 .horizontal-img-box{

@@ -47,6 +47,12 @@ const globalFilterFun = (globalFilterDispach, action) => {
       };
     case "Clear History":
       return { ...globalFilterDispach, history: [] };
+
+    case "Add to Playlist":
+      return {
+        ...globalFilterDispach,
+        playlist: [...globalFilterDispach.playlist, action.payload],
+      };
     default:
       return globalFilterDispach;
   }
@@ -57,6 +63,7 @@ const GlobalFilterContextProvider = ({ children }) => {
     history: [],
     like: [],
     watchLater: [],
+    playlist: [],
   });
   return (
     <GlobalFilterContext.Provider
