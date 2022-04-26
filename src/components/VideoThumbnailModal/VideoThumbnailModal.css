@@ -110,3 +110,9 @@
     cursor: pointer;
   }
   
+
+  @media (max-width:637px) {
+    .video-modal-content{
+      width: 16rem;
+    }
+  }

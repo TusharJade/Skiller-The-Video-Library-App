@@ -1,9 +1,14 @@
 import { useGlobalFilterContext } from "../../context/globle-filters-context";
+import { VideoThumbnailModal } from "../../components/VideoThumbnailModal/VideoThumbnailModal";
 import "./SingleVideo.css";
+import { useState } from "react";
 
 const SingleVideo = ({ item }) => {
   const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();
 
+  const [showOnClick, setShowOnClick] = useState({
+    modalPlaylist: false,
+  });
   return (
     <div className="single-video-playbox-final">
       <div className="video-iframe">
@@ -71,7 +76,12 @@ const SingleVideo = ({ item }) => {
           </div>
         )}
 
-        <div className="single-video-parent-btn">
+        <div
+          className="single-video-parent-btn"
+          onClick={() =>
+            setShowOnClick((item) => ({ ...item, modalPlaylist: true }))
+          }
+        >
           <i class="fa-solid fa-folder-plus"></i>
           <span> &nbsp;Save</span>
         </div>
@@ -83,6 +93,9 @@ const SingleVideo = ({ item }) => {
           <span> &nbsp;Copy Link</span>
         </div>
       </div>
+      {showOnClick.modalPlaylist && (
+        <VideoThumbnailModal status={setShowOnClick} data={item} />
+      )}
     </div>
   );
 };
