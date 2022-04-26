@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalFilterContext } from "../../context/globle-filters-context";
+import { VideoThumbnailModal } from "../VideoThumbnailModal/VideoThumbnailModal";
 import "./VideoThumbnail.css";
 
 const VideoThumbnail = ({ video }) => {
@@ -9,8 +10,6 @@ const VideoThumbnail = ({ video }) => {
   const [showOnClick, setShowOnClick] = useState({
     modal: false,
     modalPlaylist: false,
-    createPlaylist: false,
-    playlistName: "",
   });
 
   const navigate = useNavigate();
@@ -139,83 +138,10 @@ const VideoThumbnail = ({ video }) => {
               )}
             </div>
           )}
+          {showOnClick.modalPlaylist && (
+            <VideoThumbnailModal status={setShowOnClick} data={video} />
+          )}
         </div>
-        {showOnClick.modalPlaylist && (
-          <div
-            className="video-modal"
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          >
-            <div className="video-modal-content">
-              <div className="modal-playlist-topline">
-                <div className="save-to-text">Save to...</div>
-                <i
-                  className="fa-solid fa-xmark video-modal-close"
-                  onClick={() =>
-                    setShowOnClick((item) => ({
-                      ...item,
-                      modalPlaylist: !item.modalPlaylist,
-                    }))
-                  }
-                ></i>
-              </div>
-              <div className="created-playlist-checkbox">
-                {globalFilterState.playlist.map((item) => {
-                  return (
-                    <div className="single-playlist-checkbox">
-                      <input type="checkbox" />
-                      <label className="created-playlist-name">{item}</label>
-                    </div>
-                  );
-                })}
-              </div>
-              {showOnClick.createPlaylist ? (
-                <div className="playlist-creation-box">
-                  <div className="playlist-creating-name">Name</div>
-                  <input
-                    className="playlist-input-name"
-                    placeholder="Playlist Name"
-                    onChange={(e) =>
-                      setShowOnClick((item) => ({
-                        ...item,
-                        playlistName: e.target.value,
-                      }))
-                    }
-                  />
-                  <button
-                    className="playlist-create-btn"
-                    onClick={() =>
-                      setShowOnClick((item) => ({
-                        ...item,
-                        createPlaylist: !item.createPlaylist,
-                      }))
-                    }
-                  >
-                    Create
-                  </button>
-                </div>
-              ) : (
-                <div
-                  className="modal-playlist-bottomline"
-                  onClick={() => {
-                    setShowOnClick((item) => ({
-                      ...item,
-                      createPlaylist: !item.createPlaylist,
-                    }));
-                    globalFilterDispach({
-                      type: "Add to Playlist",
-                      payload: showOnClick.playlistName,
-                    });
-                  }}
-                >
-                  <i class="fa-solid fa-plus"></i>
-                  <div className="create-playlist">Create a new playlist</div>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
       </div>
     </>
   );

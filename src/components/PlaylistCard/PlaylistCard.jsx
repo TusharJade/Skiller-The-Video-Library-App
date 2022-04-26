@@ -1,52 +1,50 @@
 import "./PlaylistCard.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useGlobalFilterContext } from "../../context/globle-filters-context";
 
 const PlaylistCard = ({ video }) => {
+  const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();
   const [showOnClick, setShowOnClick] = useState({
     modal: false,
-    modalPlaylist: false,
   });
+
+  const navigate = useNavigate();
+
   return (
-    <div className="video-thumbnail-box">
-      <div style={{ position: "relative" }}>
-        <img
-          className="thumbnail-img"
-          src={video.thumbnailImg}
-          alt="img-failed"
-        />
-        <div className="playlist-num">
-          <span className="playlist-videos-num">1</span>
+    <div
+      className="video-thumbnail-box"
+      onClick={() => navigate(`/playlist-video/${video.playlistId}`)}
+    >
+      <div className="thumbnail-position-parent">
+        {video.playlistVideos.length === 0 ? (
           <img
-            className="video-playlist-play"
-            src="/assets/playlist.png"
-            alt="error"
+            className="thumbnail-img"
+            src="https://i.ytimg.com/vi/5y2GTQ9jLbw/maxresdefault.jpg"
+            alt="img-failed"
           />
-        </div>
+        ) : (
+          <img
+            className="thumbnail-img"
+            src={video.playlistVideos[0].thumbnailImg}
+            alt="img-failed"
+          />
+        )}
+        {video.playlistVideos.length >= 1 ? (
+          <div className="playlist-num">
+            <span className="playlist-videos-num">
+              {video.playlistVideos.length}
+            </span>
+            <img
+              className="video-playlist-play"
+              src="/assets/playlist.png"
+              alt="error"
+            />
+          </div>
+        ) : null}
       </div>
       <div className="all-thmbnail-content">
-        <img
-          className="channel-logo"
-          src={video.creatorsLogo}
-          alt="img-error"
-        />
-        <div className="thumnail-text-content">
-          <div className="short-description">
-            {video.description.length > 40
-              ? `${video.description.substring(0, 44)}...`
-              : video.description}
-          </div>
-          <div className="creater-name">
-            {video.creator}{" "}
-            {video.premiumCreator ? (
-              <i className="fa-solid fa-circle-check premium-creator"></i>
-            ) : null}
-          </div>
-          <div className="last-line-thumbnail">
-            <div className="views">{video.views} views</div>
-            <i className="fa-solid fa-circle dot views"></i>
-            <div className="views">{video.time} ago</div>
-          </div>
-        </div>
+        <div className="playlist-final-name">{video.playlistName}</div>
         <div
           className="three-dot"
           onClick={(e) => {
@@ -62,6 +60,10 @@ const PlaylistCard = ({ video }) => {
               className="hover-Effect trash-playlist-text"
               onClick={(e) => {
                 e.stopPropagation();
+                globalFilterDispach({
+                  type: "Delete Playlist",
+                  payload: video.playlistId,
+                });
               }}
             >
               <i className="fa-solid fa-trash add"></i>Delete Playlist

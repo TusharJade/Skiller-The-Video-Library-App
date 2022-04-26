@@ -12,13 +12,13 @@ const PlaylistPage = () => {
         <div className="like-counter">
           <div className="liked-text">Playlists</div>
           <div className="liked-video-num">
-            {globalFilterState.like.length}{" "}
-            {globalFilterState.like.length <= 1 ? "playlist" : "playlists"}
+            {globalFilterState.playlist.length}{" "}
+            {globalFilterState.playlist.length <= 1 ? "playlist" : "playlists"}
           </div>
         </div>
         <div className="video-outer-grid">
-          {globalFilterState.like.map((item) => (
-            <PlaylistCard key={item._id} video={item} />
+          {globalFilterState.playlist.map((item) => (
+            <PlaylistCard key={item.playlistId} video={item} />
           ))}
         </div>
       </section>

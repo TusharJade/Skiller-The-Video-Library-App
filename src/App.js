@@ -7,6 +7,7 @@ import { WatchLaterPage } from "./pages/WatchLaterPage/WatchLaterPage";
 import { HistoryPage } from "./pages/HistoryPage/HistoryPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { SignupPage } from "./pages/SignupPage/SignupPage";
+import { PlaylistVideosPage } from "./pages/PlaylistVideosPage/PlaylistVideosPage";
 import { Route, Routes } from "react-router-dom";
 import MockmanEs from "mockman-js";
 import { PlaylistPage } from "./pages/PlaylistPage/PlaylistPage";
@@ -22,6 +23,10 @@ function App() {
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/playlist" element={<PlaylistPage />} />
         <Route path="/video/:videoId" element={<SingleVideoPage />} />
+        <Route
+          path="/playlist-video/:playlistID"
+          element={<PlaylistVideosPage />}
+        />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/mockman" element={<MockmanEs />} />

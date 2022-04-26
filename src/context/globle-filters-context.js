@@ -1,4 +1,5 @@
 import { useContext, useReducer, createContext } from "react";
+import { v4 as uuid } from "uuid";
 
 const GlobalFilterContext = createContext(null);
 
@@ -48,11 +49,68 @@ const globalFilterFun = (globalFilterDispach, action) => {
     case "Clear History":
       return { ...globalFilterDispach, history: [] };
 
+    case "Create Playlist":
+      return {
+        ...globalFilterDispach,
+        playlist: [
+          ...globalFilterDispach.playlist,
+          {
+            playlistId: uuid(),
+            playlistName: action.payload,
+            playlistVideos: [],
+          },
+        ],
+      };
+
+    case "Delete Playlist":
+      return {
+        ...globalFilterDispach,
+        playlist: globalFilterDispach.playlist.filter(
+          (video) => video.playlistId !== action.payload
+        ),
+      };
     case "Add to Playlist":
       return {
         ...globalFilterDispach,
-        playlist: [...globalFilterDispach.playlist, action.payload],
+        playlist: globalFilterDispach.playlist.map((video) =>
+          video.playlistId === action.payload.playlistObj.playlistId
+            ? {
+                ...video,
+                playlistVideos: [...video.playlistVideos, action.payload.video],
+              }
+            : video
+        ),
       };
+    case "Remove From Playlist":
+      return {
+        ...globalFilterDispach,
+        playlist: globalFilterDispach.playlist.map((video) =>
+          video.playlistId === action.payload.playlistObj.playlistId
+            ? {
+                ...video,
+                playlistVideos: video.playlistVideos.filter(
+                  (removeVideo) => removeVideo !== action.payload.video
+                ),
+              }
+            : video
+        ),
+      };
+
+    case "Remove From Playlist InnerCard":
+      return {
+        ...globalFilterDispach,
+        playlist: globalFilterDispach.playlist.map((video) =>
+          video.playlistId === action.payload.payloadID
+            ? {
+                ...video,
+                playlistVideos: video.playlistVideos.filter(
+                  (removeVideo) => removeVideo !== action.payload.video
+                ),
+              }
+            : video
+        ),
+      };
+
     default:
       return globalFilterDispach;
   }
@@ -65,6 +123,7 @@ const GlobalFilterContextProvider = ({ children }) => {
     watchLater: [],
     playlist: [],
   });
+
   return (
     <GlobalFilterContext.Provider
       value={{ globalFilterState, globalFilterDispach }}
