@@ -1,0 +1,28 @@
+.clear-history{
+    border-radius: 0.3rem;
+    border: 1.4px solid var(--main-orange);
+    background-color: var(--page-bg);
+    color: var(--main-orange);
+    padding: 0 0.8rem;
+    cursor: pointer;
+    margin: 0.3rem 1.2rem 0rem auto;
+}
+
+.history-counter{
+    color: var(--grey);
+    max-width: 70rem;
+    margin: auto;
+    padding: 0.2rem 0 0 1.5rem;
+    display: flex;
+}
+
+
+@media (max-width:637px) {
+    .clear-history{
+        margin-top: 0.5rem;
+    }
+
+    .history-counter{
+        margin-bottom: 0.5rem;
+    }
+}

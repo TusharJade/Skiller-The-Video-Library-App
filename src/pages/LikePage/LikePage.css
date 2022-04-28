@@ -1,0 +1,47 @@
+.filter-margins {
+    margin: 4.5rem 0 0 14rem;
+}
+
+.like-counter{
+    color: var(--grey);
+    max-width: 70rem;
+    margin: auto;
+    padding: 0.2rem 0 0 1.5rem;
+}
+
+.liked-text{
+    font-weight: 600;
+}
+
+.liked-video-num{
+    font-size: 0.85rem;
+}
+
+@media (max-width:1200px) {
+    .filter-margins {
+        margin-left: 6.5rem;
+    }
+
+    .like-counter{
+        display: flex;
+        align-items: center;
+    }
+
+    .liked-text{
+        margin: 0 0.5rem 0 0;
+    }
+
+    .liked-video-num{
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width:637px){
+    .filter-margins {
+        margin-left: 0;
+    }
+
+    .like-counter{
+        padding: 0.5rem 0 0.5rem 1.5rem;
+    }
+}

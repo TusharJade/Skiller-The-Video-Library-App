@@ -47,6 +47,16 @@
     display: none;
 }
 
+.active-navlink{
+    color: var(--main-orange);
+    text-decoration: none;
+}
+
+.not-active{
+    color: var(--white);
+    text-decoration: none;
+}
+
 @media (max-width:1200px) {
     .sider-ul{
         width: 6.5rem;

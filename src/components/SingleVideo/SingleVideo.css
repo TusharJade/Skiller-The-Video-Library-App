@@ -34,7 +34,16 @@
     background-color: #34343d;
     padding: 0.4rem 1rem;
     border-radius: 1rem;
+    cursor: pointer;
     font-weight: 500;
+}
+
+.colorful-heart{
+    color: var(--red);
+}
+
+.colorful-watch{
+    color: var(--blue);
 }
 
 @media (max-width:1200px) {
