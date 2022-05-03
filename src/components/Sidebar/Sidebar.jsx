@@ -8,42 +8,54 @@ const Sidebar = () => {
   return (
     <nav className="main-sidebar">
       <div className="sider-ul">
-        <NavLink className={changeColor} to="/">
-          <div className="list-sidebar">
-            <i className="fa-solid fa-house sider-icn"></i>
-            <div className="sidebar-icn-name">Home</div>
-          </div>
-        </NavLink>
-        <NavLink className={changeColor} to="/playlist">
-          <div className="list-sidebar">
-            <i className="fa-solid fa-folder-plus sider-icn"></i>
-            <div className="sidebar-icn-name ">Playlist</div>
-          </div>
-        </NavLink>
-        <NavLink className={changeColor} to="/like">
-          <div className="list-sidebar hide">
-            <i className="fa-solid fa-heart sider-icn"></i>
-            <div className="sidebar-icn-name">Liked</div>
-          </div>
-        </NavLink>
-        <NavLink className={changeColor} to="/watch-later">
-          <div className="list-sidebar hide">
-            <i className="fa-solid fa-clock sider-icn"></i>
-            <div className="sidebar-icn-name">Watch Later</div>
-          </div>
-        </NavLink>
-        <NavLink className={changeColor} to="/history">
-          <div className="list-sidebar hide">
-            <i className="fa-solid fa-clock-rotate-left sider-icn"></i>
-            <div className="sidebar-icn-name">History</div>
-          </div>
-        </NavLink>
-        <NavLink className={changeColor} to="/profile">
-          <div className="list-sidebar profile">
-            <i className="fa-solid fa-user sider-icn"></i>
-            <div className="sidebar-icn-name">Profile</div>
-          </div>
-        </NavLink>
+        <div>
+          <NavLink className={changeColor} to="/">
+            <div className="list-sidebar">
+              <i className="fa-solid fa-house sider-icn"></i>
+              <div className="sidebar-icn-name">Home</div>
+            </div>
+          </NavLink>
+        </div>
+        <div>
+          <NavLink className={changeColor} to="/playlist">
+            <div className="list-sidebar">
+              <i className="fa-solid fa-folder-plus sider-icn"></i>
+              <div className="sidebar-icn-name ">Playlist</div>
+            </div>
+          </NavLink>
+        </div>
+        <div className="hide">
+          <NavLink className={changeColor} to="/like">
+            <div className="list-sidebar">
+              <i className="fa-solid fa-heart sider-icn"></i>
+              <div className="sidebar-icn-name">Liked</div>
+            </div>
+          </NavLink>
+        </div>
+        <div className="hide">
+          <NavLink className={changeColor} to="/watch-later">
+            <div className="list-sidebar">
+              <i className="fa-solid fa-clock sider-icn"></i>
+              <div className="sidebar-icn-name">Watch Later</div>
+            </div>
+          </NavLink>
+        </div>
+        <div className="hide">
+          <NavLink className={changeColor} to="/history">
+            <div className="list-sidebar">
+              <i className="fa-solid fa-clock-rotate-left sider-icn"></i>
+              <div className="sidebar-icn-name">History</div>
+            </div>
+          </NavLink>
+        </div>
+        <div>
+          <NavLink className={changeColor} to="/profile">
+            <div className="list-sidebar profile">
+              <i className="fa-solid fa-user sider-icn"></i>
+              <div className="sidebar-icn-name">Profile</div>
+            </div>
+          </NavLink>
+        </div>
       </div>
     </nav>
   );

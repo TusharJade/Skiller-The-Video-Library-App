@@ -1,3 +1,4 @@
+import "../LoginPage/LoginPage.css";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { Link } from "react-router-dom";
 

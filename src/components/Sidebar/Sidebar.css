@@ -96,9 +96,10 @@
 
     .sider-ul{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         height: 4.5rem;
-        width: auto;
+        width: 100%;
+        padding: 0 1.6rem;
     }
 
     .hide{
@@ -120,9 +121,5 @@
     
     .list-sidebar:hover .sider-icn{
         background-color: var(--navbar-bg);
-    }
-
-    .list-sidebar{
-         margin: 0rem 2.8rem;
     }
 }

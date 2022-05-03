@@ -1,3 +1,4 @@
+import "../../components/VideoThumbnail/VideoThumbnail.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalFilterContext } from "../../context/globle-filters-context";
