@@ -8,7 +8,7 @@
 
 .login-container{
    width: 30rem;
-   border: 1px solid var(--border);
+   border: 1.5px solid var(--border);
    border-radius: 0.5rem;
    display: flex;
    flex-direction: column;
@@ -24,6 +24,7 @@
 }
 
 .input-container{
+    position: relative;
     color: var(--grey);
     display: flex;
     flex-direction: column;
@@ -37,9 +38,14 @@
 
 .input-feild{
     background-color: var(--page-bg);
-    border: 1px solid var(--border);
+    border: 1.2px solid var(--border);
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;
+    color: var(--grey);
+}
+
+.input-feild:focus{
+    outline: none;
 }
 
 .password-container{
@@ -67,6 +73,10 @@
     margin: 1rem 0;
 }
 
+.margin-login{
+    margin-top: 1.7rem;
+}
+
 .new-text{
     color: var(--grey);
     text-align: center;
@@ -81,6 +91,25 @@
 
 .singup-gap{
     margin-top: 1.1rem;
+}
+
+.password-eye{
+    position: absolute;
+    right: 9px;
+    font-size: 1.25rem;
+    color: var(--eye-color);
+    top: 1.85rem;
+    cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--page-bg) inset !important;
+}
+input:-webkit-autofill{
+    -webkit-text-fill-color: var(--grey) !important;
 }
 
 @media (max-width:1200px) {
