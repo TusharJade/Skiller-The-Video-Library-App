@@ -13,8 +13,8 @@ const VideoContextProvider = ({ children }) => {
         const response = await axios.get("/api/videos");
 
         setVideo(response.data.videos);
-      } catch (er) {
-        console.log("Error while loading videos", er);
+      } catch (error) {
+        console.log(error);
       }
     };
     getAllVideos();

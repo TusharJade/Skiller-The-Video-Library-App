@@ -2,9 +2,12 @@ import "./LoginPage.css";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useAuthContext } from "../../context/auth-context";
 import axios from "axios";
 
 const LoginPage = () => {
+  const { setAuth } = useAuthContext();
+
   const [loginInfo, setLoginInfo] = useState({
     email: "",
     password: "",
@@ -31,6 +34,12 @@ const LoginPage = () => {
           fullname: response.data.foundUser.fullname,
         })
       );
+
+      setAuth({
+        loginStatus: true,
+        token: localStorage.getItem("TOKEN"),
+        user: JSON.parse(localStorage.getItem("USER_INFO")),
+      });
 
       navigate("/");
     } catch (error) {
@@ -62,9 +71,9 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="sidebar-box">
-        <Sidebar />
-      </div>
+      {/* <div className="sidebar-box"> */}
+      <Sidebar />
+      {/* </div> */}
       <form className="login-outerbox" onSubmit={singupSubmiter}>
         <div className="login-container">
           <div className="login-text">Login</div>

@@ -2,9 +2,10 @@ import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import sign from "jwt-encode";
+import { useAuthContext } from "../../context/auth-context";
 
 const SignupPage = () => {
+  const { setAuth } = useAuthContext();
   const [singupInput, setSignupInput] = useState({
     fullname: "",
     email: "",
@@ -41,6 +42,12 @@ const SignupPage = () => {
             })
           );
 
+          setAuth({
+            loginStatus: true,
+            token: localStorage.getItem("TOKEN"),
+            user: JSON.parse(localStorage.getItem("USER_INFO")),
+          });
+
           navigate("/");
         } catch (error) {
           console.log(error);
@@ -58,7 +65,7 @@ const SignupPage = () => {
       <div className="sidebar-box">
         <Sidebar />
       </div>
-      <form className="login-outerbox" onSubmit={signupSubmiter}>
+      <form className="signup-outerbox" onSubmit={signupSubmiter}>
         <div className="login-container">
           <div className="login-text">Signup</div>
 

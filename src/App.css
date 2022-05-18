@@ -15,6 +15,10 @@ body{
     text-decoration: none;
 }
 
+li{
+    list-style: none;
+}
+
 :root{
     --navbar-bg:#222222;
     --main-orange:#ff9041;

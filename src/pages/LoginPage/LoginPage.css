@@ -1,9 +1,17 @@
 .login-outerbox{
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    margin: 5rem 0 0 7rem;
     align-items: center;
-    height: 80vh;
+    height: 70vh;
+}
+
+.signup-outerbox{
+    display: flex;
+    justify-content: center;
+    margin: 5rem 0 0 7rem;
+    align-items: center;
+    height: 75vh;
 }
 
 .login-container{
@@ -80,7 +88,7 @@
 .new-text{
     color: var(--grey);
     text-align: center;
-    margin: 1.3rem 0 2.4rem 0;
+    margin: 1.3rem 0 1.7rem 0;
     font-size: 0.93rem;
 }
 
@@ -112,14 +120,11 @@ input:-webkit-autofill{
     -webkit-text-fill-color: var(--grey) !important;
 }
 
-@media (max-width:1200px) {
-    .sidebar-box{
-        display: none;
-    }
-}
-
 @media (max-width:637px) {
-    .sidebar-box{
-        display: flex;
+    .signup-outerbox{
+        margin-left: 0;
+    }
+    .login-outerbox{
+        margin-left: 0;
     }
 }
