@@ -52,3 +52,9 @@
         width: 100%;
     }
 }
+
+@media (max-width:637px) {
+    .horizontal-img-box{
+        width: 50%;
+    }
+}

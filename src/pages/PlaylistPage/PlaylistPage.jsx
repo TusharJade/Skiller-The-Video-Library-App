@@ -1,4 +1,4 @@
-import "./PlaylistPage.css";
+import "../LikePage/LikePage.css";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { PlaylistCard } from "../../components/PlaylistCard/PlaylistCard";
 import { useGlobalFilterContext } from "../../context/globle-filters-context";

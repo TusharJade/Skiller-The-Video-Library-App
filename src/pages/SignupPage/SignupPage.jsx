@@ -1,3 +1,4 @@
+import "../LoginPage/LoginPage.css";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";

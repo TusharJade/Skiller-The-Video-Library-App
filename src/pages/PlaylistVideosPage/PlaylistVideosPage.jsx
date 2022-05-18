@@ -1,9 +1,8 @@
-import "./PlaylistVideosPage.css";
+import "../LikePage/LikePage.css";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { useGlobalFilterContext } from "../../context/globle-filters-context";
-import { VideoThumbnail } from "../../components/VideoThumbnail/VideoThumbnail";
 import { useParams } from "react-router-dom";
-import { InnerPlaylistCard } from "../../components/PlaylistCard/InnerPlaylistCard";
+import { InnerPlaylistCard } from "../PlaylistVideosPage/InnerPlaylistCard";
 
 const PlaylistVideosPage = () => {
   const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();

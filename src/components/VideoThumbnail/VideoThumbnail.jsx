@@ -1,8 +1,8 @@
+import "./VideoThumbnail.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalFilterContext } from "../../context/globle-filters-context";
 import { VideoThumbnailModal } from "../VideoThumbnailModal/VideoThumbnailModal";
-import "./VideoThumbnail.css";
 
 const VideoThumbnail = ({ video }) => {
   const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();

@@ -1,4 +1,4 @@
-import "./WatchLaterPage.css";
+import "../LikePage/LikePage.css";
 import { VideoThumbnail } from "../../components/VideoThumbnail/VideoThumbnail";
 import { useGlobalFilterContext } from "../../context/globle-filters-context";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
