@@ -1,7 +1,7 @@
 .login-outerbox{
     display: flex;
     justify-content: center;
-    margin: 5rem 0 0 7rem;
+    margin: 6rem 0 0 7rem;
     align-items: center;
     height: 70vh;
 }
@@ -9,9 +9,9 @@
 .signup-outerbox{
     display: flex;
     justify-content: center;
-    margin: 5rem 0 0 7rem;
+    margin: 6.6rem 0 0 7rem;
     align-items: center;
-    height: 75vh;
+    height: 85vh;
 }
 
 .login-container{
@@ -122,9 +122,11 @@ input:-webkit-autofill{
 
 @media (max-width:637px) {
     .signup-outerbox{
-        margin-left: 0;
+        margin: 0;
+        height: 100vh;
     }
     .login-outerbox{
-        margin-left: 0;
+        margin: 0;
+        height: 100vh;
     }
 }
