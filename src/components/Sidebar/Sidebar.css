@@ -97,7 +97,7 @@
         display: flex;
         justify-content: space-between;
         height: 4.5rem;
-        width: 100%;
+        width: auto;
         padding: 0 1.6rem;
     }
 
@@ -123,7 +123,7 @@
     }
 
     .list-sidebar{
-         margin: 0rem 3rem;
+         margin: 0rem 0.5rem;
     }
 
 }

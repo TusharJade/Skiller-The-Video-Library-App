@@ -7,7 +7,6 @@ const Sidebar = () => {
   };
   return (
     <nav className="main-sidebar">
-
       <ul className="sider-ul">
         <li>
           <NavLink className={changeColor} to="/">

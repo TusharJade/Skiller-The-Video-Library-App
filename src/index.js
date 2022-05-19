@@ -7,6 +7,7 @@ import { makeServer } from "./server";
 import { VideoContextProvider } from "./context/video-context";
 import { GlobalFilterContextProvider } from "./context/globle-filters-context";
 import { AuthContextProvider } from "./context/auth-context";
+import { HistoryContextProvider } from "./context/history-context";
 
 // Call make Server
 makeServer();
@@ -14,13 +15,15 @@ makeServer();
 createRoot.render(
   <React.StrictMode>
     <AuthContextProvider>
-      <GlobalFilterContextProvider>
-        <VideoContextProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </VideoContextProvider>
-      </GlobalFilterContextProvider>
+      <HistoryContextProvider>
+        <GlobalFilterContextProvider>
+          <VideoContextProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </VideoContextProvider>
+        </GlobalFilterContextProvider>
+      </HistoryContextProvider>
     </AuthContextProvider>
   </React.StrictMode>,
   document.getElementById("root")

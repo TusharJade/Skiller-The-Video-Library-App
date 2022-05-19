@@ -32,7 +32,7 @@ const SingleVideoPage = () => {
           {filterOutSingleVideo
             .sort(() => Math.random() - Math.random())
             .map((item) => {
-              return <HorizontalVideo video={item} />;
+              return <HorizontalVideo key={item._id} video={item} />;
             })}
         </div>
       </section>

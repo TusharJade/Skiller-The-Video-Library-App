@@ -14,9 +14,9 @@ const SingleVideo = ({ item }) => {
       <div className="video-iframe">
         <iframe
           src={item.videoLink}
-          frameborder="0"
+          frameBorder="0"
           title="YouTube video player"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
       <div className="single-page-category"># {item.category}</div>
@@ -32,7 +32,7 @@ const SingleVideo = ({ item }) => {
               })
             }
           >
-            <i class="fa-solid fa-heart single-video-heart colorful-heart"></i>
+            <i className="fa-solid fa-heart single-video-heart colorful-heart"></i>
             <span>&nbsp; Like</span>
           </div>
         ) : (
@@ -42,7 +42,7 @@ const SingleVideo = ({ item }) => {
               globalFilterDispach({ type: "Add to Like", payload: item })
             }
           >
-            <i class="fa-solid fa-heart single-video-heart"></i>
+            <i className="fa-solid fa-heart single-video-heart"></i>
             <span>&nbsp; Like</span>
           </div>
         )}
@@ -59,7 +59,7 @@ const SingleVideo = ({ item }) => {
               })
             }
           >
-            <i class="fa-solid fa-clock add colorful-watch"></i>
+            <i className="fa-solid fa-clock add colorful-watch"></i>
             <span> Watch Later</span>
           </div>
         ) : (
@@ -69,7 +69,7 @@ const SingleVideo = ({ item }) => {
               globalFilterDispach({ type: "Add to Watch Later", payload: item })
             }
           >
-            <i class="fa-solid fa-clock add"></i>
+            <i className="fa-solid fa-clock add"></i>
             <span> Watch Later</span>
           </div>
         )}
@@ -80,14 +80,14 @@ const SingleVideo = ({ item }) => {
             setShowOnClick((item) => ({ ...item, modalPlaylist: true }))
           }
         >
-          <i class="fa-solid fa-folder-plus"></i>
+          <i className="fa-solid fa-folder-plus"></i>
           <span> &nbsp;Save</span>
         </div>
         <div
           onClick={() => navigator.clipboard.writeText(`${item.videoLink}`)}
           className="single-video-parent-btn"
         >
-          <i class="fa-solid fa-clipboard"></i>
+          <i className="fa-solid fa-clipboard"></i>
           <span> &nbsp;Copy Link</span>
         </div>
       </div>

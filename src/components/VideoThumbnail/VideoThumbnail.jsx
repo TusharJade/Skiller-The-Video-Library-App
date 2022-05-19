@@ -3,8 +3,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalFilterContext } from "../../context/globle-filters-context";
 import { VideoThumbnailModal } from "../VideoThumbnailModal/VideoThumbnailModal";
+import { useHistoryContext } from "../../context/history-context";
 
 const VideoThumbnail = ({ video }) => {
+  const { addToHistory } = useHistoryContext();
   const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();
 
   const [showOnClick, setShowOnClick] = useState({
@@ -20,7 +22,7 @@ const VideoThumbnail = ({ video }) => {
         className="video-thumbnail-box"
         onClick={() => {
           navigate(`/video/${video._id}`);
-          globalFilterDispach({ type: "Add to History", payload: video });
+          addToHistory(video);
         }}
       >
         <img
