@@ -1,16 +1,16 @@
 import "./VideoThumbnail.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useGlobalFilterContext } from "../../context/globle-filters-context";
 import { VideoThumbnailModal } from "../VideoThumbnailModal/VideoThumbnailModal";
 import { useHistoryContext } from "../../context/history-context";
+import { useLikeContext } from "../../context/like-context";
 import { useWatchLaterContext } from "../../context/watch-later-context";
 
 const VideoThumbnail = ({ video }) => {
   const { addToHistory } = useHistoryContext();
   const { watchLater, addToWatchLater, removeFromWatchLater } =
     useWatchLaterContext();
-  const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();
+  const { like, addToLike, removeFromLike } = useLikeContext();
 
   const [showOnClick, setShowOnClick] = useState({
     modal: false,
@@ -106,15 +106,12 @@ const VideoThumbnail = ({ video }) => {
                 <i class="fa-solid fa-circle-plus add"></i>Add to Playlist
               </div>
 
-              {globalFilterState.like.find((item) => item._id === video._id) ? (
+              {like.find((item) => item._id === video._id) ? (
                 <div
                   className="hover-Effect remove-like-color"
                   onClick={(e) => {
-                    globalFilterDispach({
-                      type: "Remove From Like",
-                      payload: video._id,
-                    });
                     e.stopPropagation();
+                    removeFromLike(video._id);
                   }}
                 >
                   <i class="fa-solid fa-heart add"></i>Remove from Like
@@ -123,11 +120,8 @@ const VideoThumbnail = ({ video }) => {
                 <div
                   className="hover-Effect"
                   onClick={(e) => {
-                    globalFilterDispach({
-                      type: "Add to Like",
-                      payload: video,
-                    });
                     e.stopPropagation();
+                    addToLike(video);
                   }}
                 >
                   <i class="fa-solid fa-heart add"></i>Like

@@ -9,6 +9,7 @@ import { GlobalFilterContextProvider } from "./context/globle-filters-context";
 import { AuthContextProvider } from "./context/auth-context";
 import { HistoryContextProvider } from "./context/history-context";
 import { WatchLaterContextProvider } from "./context/watch-later-context";
+import { LikeContextProvider } from "./context/like-context";
 
 // Call make Server
 makeServer();
@@ -16,17 +17,19 @@ makeServer();
 createRoot.render(
   <React.StrictMode>
     <AuthContextProvider>
-      <WatchLaterContextProvider>
-        <HistoryContextProvider>
-          <GlobalFilterContextProvider>
-            <VideoContextProvider>
-              <BrowserRouter>
-                <App />
-              </BrowserRouter>
-            </VideoContextProvider>
-          </GlobalFilterContextProvider>
-        </HistoryContextProvider>
-      </WatchLaterContextProvider>
+      <LikeContextProvider>
+        <WatchLaterContextProvider>
+          <HistoryContextProvider>
+            <GlobalFilterContextProvider>
+              <VideoContextProvider>
+                <BrowserRouter>
+                  <App />
+                </BrowserRouter>
+              </VideoContextProvider>
+            </GlobalFilterContextProvider>
+          </HistoryContextProvider>
+        </WatchLaterContextProvider>
+      </LikeContextProvider>
     </AuthContextProvider>
   </React.StrictMode>,
   document.getElementById("root")

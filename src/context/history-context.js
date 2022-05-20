@@ -5,7 +5,7 @@ import { useAuthContext } from "./auth-context";
 const HistoryContext = createContext(null);
 
 const HistoryContextProvider = ({ children }) => {
-  const { auth, setAuth } = useAuthContext();
+  const { auth } = useAuthContext();
 
   const [history, setHistory] = useState([]);
 
