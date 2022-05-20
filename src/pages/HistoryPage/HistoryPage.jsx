@@ -1,4 +1,5 @@
 import "./HistoryPage.css";
+import { Link } from "react-router-dom";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { HisoryCard } from "../../components/HisoryCard/HisoryCard";
 import { useHistoryContext } from "../../context/history-context";
@@ -33,7 +34,9 @@ const HistoryPage = () => {
           <div className="empty-box-outer">
             <img src="./assets/empty.png" alt="error" className="empty-box" />
             <div className="empty-box-text">You didn't watch anything yet</div>
-            <button className="empty-box-btn">Watch videos</button>
+            <Link to="/" className="empty-box-btn">
+              Watch videos
+            </Link>
           </div>
         ) : null}
       </div>

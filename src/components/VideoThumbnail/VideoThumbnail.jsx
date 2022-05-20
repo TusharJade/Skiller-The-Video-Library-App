@@ -4,9 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { useGlobalFilterContext } from "../../context/globle-filters-context";
 import { VideoThumbnailModal } from "../VideoThumbnailModal/VideoThumbnailModal";
 import { useHistoryContext } from "../../context/history-context";
+import { useWatchLaterContext } from "../../context/watch-later-context";
 
 const VideoThumbnail = ({ video }) => {
   const { addToHistory } = useHistoryContext();
+  const { watchLater, addToWatchLater, removeFromWatchLater } =
+    useWatchLaterContext();
   const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();
 
   const [showOnClick, setShowOnClick] = useState({
@@ -65,17 +68,12 @@ const VideoThumbnail = ({ video }) => {
           </div>
           {showOnClick.modal && (
             <div className="toggle-menu">
-              {globalFilterState.watchLater.find(
-                (item) => item._id === video._id
-              ) ? (
+              {watchLater.find((item) => item._id === video._id) ? (
                 <div
                   className="hover-Effect delete-red-color"
                   onClick={(e) => {
-                    globalFilterDispach({
-                      type: "Remove From Watch Later",
-                      payload: video._id,
-                    });
                     e.stopPropagation();
+                    removeFromWatchLater(video._id);
                   }}
                 >
                   <i className="fa-solid fa-trash add"></i>
@@ -85,11 +83,8 @@ const VideoThumbnail = ({ video }) => {
                 <div
                   className="hover-Effect"
                   onClick={(e) => {
-                    globalFilterDispach({
-                      type: "Add to Watch Later",
-                      payload: video,
-                    });
                     e.stopPropagation();
+                    addToWatchLater(video);
                   }}
                 >
                   <i class="fa-solid fa-clock add"></i>

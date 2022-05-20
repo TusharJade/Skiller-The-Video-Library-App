@@ -32,16 +32,19 @@
 .empty-box-text{
      color: var(--empty-msg);
      margin: 0.5rem;
+     font-size: 14.5px;
 }
 
 .empty-box-btn{
     background-color: #f89b59;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15.3px;
     border: none;
     border-radius: 4px;
-    padding: 7px 4rem;
+    padding: 7px 5rem;
     margin-top: 5px;
+    text-decoration: none;
+    color: black;
 }
 
 
