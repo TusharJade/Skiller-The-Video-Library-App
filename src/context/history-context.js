@@ -5,9 +5,9 @@ import { useAuthContext } from "./auth-context";
 const HistoryContext = createContext(null);
 
 const HistoryContextProvider = ({ children }) => {
-  const { auth } = useAuthContext();
-
   const [history, setHistory] = useState([]);
+
+  const { auth } = useAuthContext();
 
   const customHeader = {
     headers: {

@@ -7,11 +7,13 @@ import { useLikeContext } from "../../context/like-context";
 const SingleVideo = ({ video }) => {
   const { watchLater, addToWatchLater, removeFromWatchLater } =
     useWatchLaterContext();
-  const { like, setLike, addToLike, removeFromLike } = useLikeContext();
+
+  const { like, addToLike, removeFromLike } = useLikeContext();
 
   const [showOnClick, setShowOnClick] = useState({
     modalPlaylist: false,
   });
+
   return (
     <div className="single-video-playbox-final">
       <div className="video-iframe">

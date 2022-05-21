@@ -8,8 +8,10 @@ import { useWatchLaterContext } from "../../context/watch-later-context";
 
 const VideoThumbnail = ({ video }) => {
   const { addToHistory } = useHistoryContext();
+
   const { watchLater, addToWatchLater, removeFromWatchLater } =
     useWatchLaterContext();
+
   const { like, addToLike, removeFromLike } = useLikeContext();
 
   const [showOnClick, setShowOnClick] = useState({
@@ -87,7 +89,7 @@ const VideoThumbnail = ({ video }) => {
                     addToWatchLater(video);
                   }}
                 >
-                  <i class="fa-solid fa-clock add"></i>
+                  <i className="fa-solid fa-clock add"></i>
                   Add to Watch Later
                 </div>
               )}
@@ -103,7 +105,7 @@ const VideoThumbnail = ({ video }) => {
                   }));
                 }}
               >
-                <i class="fa-solid fa-circle-plus add"></i>Add to Playlist
+                <i className="fa-solid fa-circle-plus add"></i>Add to Playlist
               </div>
 
               {like.find((item) => item._id === video._id) ? (
@@ -114,7 +116,7 @@ const VideoThumbnail = ({ video }) => {
                     removeFromLike(video._id);
                   }}
                 >
-                  <i class="fa-solid fa-heart add"></i>Remove from Like
+                  <i className="fa-solid fa-heart add"></i>Remove from Like
                 </div>
               ) : (
                 <div
@@ -124,7 +126,7 @@ const VideoThumbnail = ({ video }) => {
                     addToLike(video);
                   }}
                 >
-                  <i class="fa-solid fa-heart add"></i>Like
+                  <i className="fa-solid fa-heart add"></i>Like
                 </div>
               )}
             </div>

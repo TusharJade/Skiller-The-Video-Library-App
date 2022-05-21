@@ -56,4 +56,8 @@
     .history-counter{
         margin-bottom: 0.5rem;
     }
+
+    .empty-box-outer{
+        height: 35vh;
+    }
 }

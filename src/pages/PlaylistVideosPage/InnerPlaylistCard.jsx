@@ -1,11 +1,13 @@
 import "../../components/VideoThumbnail/VideoThumbnail.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useGlobalFilterContext } from "../../context/globle-filters-context";
+import { useHistoryContext } from "../../context/history-context";
 import { useParams } from "react-router-dom";
+import { usePlaylistContext } from "../../context/playlist-context";
 
 const InnerPlaylistCard = ({ video }) => {
-  const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();
+  const { addToHistory } = useHistoryContext();
+  const { removeFromPlaylist } = usePlaylistContext();
 
   const [showOnClick, setShowOnClick] = useState({
     modal: false,
@@ -20,7 +22,7 @@ const InnerPlaylistCard = ({ video }) => {
         className="video-thumbnail-box"
         onClick={() => {
           navigate(`/video/${video._id}`);
-          globalFilterDispach({ type: "Add to History", payload: video });
+          addToHistory(video);
         }}
       >
         <img
@@ -67,10 +69,7 @@ const InnerPlaylistCard = ({ video }) => {
                 className="hover-Effect remove-from-history"
                 onClick={(e) => {
                   e.stopPropagation();
-                  globalFilterDispach({
-                    type: "Remove From Playlist InnerCard",
-                    payload: { payloadID: playlistID, video: video },
-                  });
+                  removeFromPlaylist(playlistID, video._id);
                 }}
               >
                 <i className="fa-solid fa-trash add"></i>Remove from Playlist
