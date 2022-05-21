@@ -1,11 +1,21 @@
 import "./VideoThumbnail.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useGlobalFilterContext } from "../../context/globle-filters-context";
 import { VideoThumbnailModal } from "../VideoThumbnailModal/VideoThumbnailModal";
+import { useHistoryContext } from "../../context/history-context";
+import { useLikeContext } from "../../context/like-context";
+import { useWatchLaterContext } from "../../context/watch-later-context";
+import { useAuthContext } from "../../context/auth-context";
 
 const VideoThumbnail = ({ video }) => {
-  const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();
+  const { addToHistory } = useHistoryContext();
+
+  const { watchLater, addToWatchLater, removeFromWatchLater } =
+    useWatchLaterContext();
+
+  const { like, addToLike, removeFromLike } = useLikeContext();
+
+  const { auth } = useAuthContext();
 
   const [showOnClick, setShowOnClick] = useState({
     modal: false,
@@ -20,7 +30,7 @@ const VideoThumbnail = ({ video }) => {
         className="video-thumbnail-box"
         onClick={() => {
           navigate(`/video/${video._id}`);
-          globalFilterDispach({ type: "Add to History", payload: video });
+          if (auth.loginStatus) addToHistory(video);
         }}
       >
         <img
@@ -63,17 +73,12 @@ const VideoThumbnail = ({ video }) => {
           </div>
           {showOnClick.modal && (
             <div className="toggle-menu">
-              {globalFilterState.watchLater.find(
-                (item) => item._id === video._id
-              ) ? (
+              {watchLater.find((item) => item._id === video._id) ? (
                 <div
                   className="hover-Effect delete-red-color"
                   onClick={(e) => {
-                    globalFilterDispach({
-                      type: "Remove From Watch Later",
-                      payload: video._id,
-                    });
                     e.stopPropagation();
+                    removeFromWatchLater(video._id);
                   }}
                 >
                   <i className="fa-solid fa-trash add"></i>
@@ -83,14 +88,13 @@ const VideoThumbnail = ({ video }) => {
                 <div
                   className="hover-Effect"
                   onClick={(e) => {
-                    globalFilterDispach({
-                      type: "Add to Watch Later",
-                      payload: video,
-                    });
                     e.stopPropagation();
+                    auth.loginStatus
+                      ? addToWatchLater(video)
+                      : navigate("/login");
                   }}
                 >
-                  <i class="fa-solid fa-clock add"></i>
+                  <i className="fa-solid fa-clock add"></i>
                   Add to Watch Later
                 </div>
               )}
@@ -99,41 +103,37 @@ const VideoThumbnail = ({ video }) => {
                 className="hover-Effect"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setShowOnClick((item) => ({
-                    ...item,
-                    modal: !item.modal,
-                    modalPlaylist: !item.modalPlaylist,
-                  }));
+                  auth.loginStatus
+                    ? setShowOnClick((item) => ({
+                        ...item,
+                        modal: !item.modal,
+                        modalPlaylist: !item.modalPlaylist,
+                      }))
+                    : navigate("/login");
                 }}
               >
-                <i class="fa-solid fa-circle-plus add"></i>Add to Playlist
+                <i className="fa-solid fa-circle-plus add"></i>Add to Playlist
               </div>
 
-              {globalFilterState.like.find((item) => item._id === video._id) ? (
+              {like.find((item) => item._id === video._id) ? (
                 <div
                   className="hover-Effect remove-like-color"
                   onClick={(e) => {
-                    globalFilterDispach({
-                      type: "Remove From Like",
-                      payload: video._id,
-                    });
                     e.stopPropagation();
+                    removeFromLike(video._id);
                   }}
                 >
-                  <i class="fa-solid fa-heart add"></i>Remove from Like
+                  <i className="fa-solid fa-heart add"></i>Remove from Like
                 </div>
               ) : (
                 <div
                   className="hover-Effect"
                   onClick={(e) => {
-                    globalFilterDispach({
-                      type: "Add to Like",
-                      payload: video,
-                    });
                     e.stopPropagation();
+                    auth.loginStatus ? addToLike(video) : navigate("/login");
                   }}
                 >
-                  <i class="fa-solid fa-heart add"></i>Like
+                  <i className="fa-solid fa-heart add"></i>Like
                 </div>
               )}
             </div>

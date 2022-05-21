@@ -1,9 +1,10 @@
 import "./VideoThumbnailModal.css";
-import { useGlobalFilterContext } from "../../context/globle-filters-context";
 import { useState } from "react";
+import { usePlaylistContext } from "../../context/playlist-context";
 
 const VideoThumbnailModal = ({ status, data }) => {
-  const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();
+  const { playlist, createCustomPlaylist, addToPlaylist, removeFromPlaylist } =
+    usePlaylistContext();
 
   const [createPlaylist, setCreatePlaylist] = useState({
     playlistName: "",
@@ -31,22 +32,20 @@ const VideoThumbnailModal = ({ status, data }) => {
           ></i>
         </div>
         <div className="created-playlist-checkbox">
-          {globalFilterState.playlist.map((item) => {
+          {playlist.map((item) => {
             return (
-              <div className="single-playlist-checkbox">
+              <div className="single-playlist-checkbox" key={item._id}>
                 <input
                   type="checkbox"
-                  checked={item.playlistVideos.includes(data)}
+                  checked={
+                    item.videos.find((myVideo) => myVideo._id === data._id)
+                      ? true
+                      : false
+                  }
                   onChange={(e) =>
-                    e.target.checked === true
-                      ? globalFilterDispach({
-                          type: "Add to Playlist",
-                          payload: { playlistObj: item, video: data },
-                        })
-                      : globalFilterDispach({
-                          type: "Remove From Playlist",
-                          payload: { playlistObj: item, video: data },
-                        })
+                    e.target.checked
+                      ? addToPlaylist(item._id, data)
+                      : removeFromPlaylist(item._id, data._id)
                   }
                 />
                 <label className="created-playlist-name">
@@ -73,14 +72,11 @@ const VideoThumbnailModal = ({ status, data }) => {
               className="playlist-create-btn"
               disabled={createPlaylist.playlistName === "" ? true : false}
               onClick={() => {
-                setCreatePlaylist((item) => ({
-                  ...item,
-                  createPlaylistStatus: !item.createPlaylistStatus,
-                }));
-                globalFilterDispach({
-                  type: "Create Playlist",
-                  payload: createPlaylist.playlistName,
+                setCreatePlaylist({
+                  playlistName: "",
+                  createPlaylistStatus: false,
                 });
+                createCustomPlaylist(createPlaylist.playlistName);
               }}
             >
               Create
@@ -92,11 +88,11 @@ const VideoThumbnailModal = ({ status, data }) => {
             onClick={() => {
               setCreatePlaylist((item) => ({
                 ...item,
-                createPlaylistStatus: !item.createPlaylistStatus,
+                createPlaylistStatus: true,
               }));
             }}
           >
-            <i class="fa-solid fa-plus"></i>
+            <i className="fa-solid fa-plus"></i>
             <div className="create-playlist">Create a new playlist</div>
           </div>
         )}

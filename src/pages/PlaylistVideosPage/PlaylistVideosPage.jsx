@@ -1,39 +1,49 @@
 import "../LikePage/LikePage.css";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
-import { useGlobalFilterContext } from "../../context/globle-filters-context";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { InnerPlaylistCard } from "../PlaylistVideosPage/InnerPlaylistCard";
+import { usePlaylistContext } from "../../context/playlist-context";
 
 const PlaylistVideosPage = () => {
-  const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();
+  const { playlist } = usePlaylistContext();
 
   const { playlistID } = useParams();
 
   const filterByIdFun = (playlist, id) => {
-    return playlist.find((videoId) => videoId.playlistId === id);
+    return playlist.find((videoId) => videoId._id === id);
   };
 
-  const readyPlaylistVideo = filterByIdFun(
-    globalFilterState.playlist,
-    playlistID
-  );
+  const readyPlaylistVideo = filterByIdFun(playlist, playlistID);
 
   return (
     <>
       <Sidebar />
       <div className="filter-margins">
         <div className="like-counter">
-          <div className="liked-text">Available videos</div>
+          <div className="liked-text">
+            Playlist name - {readyPlaylistVideo.playlistName}
+          </div>
           <div className="liked-video-num">
-            {readyPlaylistVideo.playlistVideos.length}{" "}
-            {readyPlaylistVideo.playlistVideos.length <= 1 ? "video" : "videos"}
+            {readyPlaylistVideo.videos.length}{" "}
+            {readyPlaylistVideo.videos.length <= 1 ? "video" : "videos"}
           </div>
         </div>
         <div className="video-outer-grid">
-          {readyPlaylistVideo.playlistVideos.map((item) => {
+          {readyPlaylistVideo.videos.map((item) => {
             return <InnerPlaylistCard key={item._id} video={item} />;
           })}
         </div>
+        {readyPlaylistVideo.videos.length === 0 ? (
+          <div className="empty-box-outer">
+            <img src="../assets/empty.png" alt="error" className="empty-box" />
+            <div className="empty-box-text">
+              Playlist {readyPlaylistVideo.playlistName} is empty watch videos
+            </div>
+            <Link to="/" className="empty-box-btn">
+              Watch videos
+            </Link>
+          </div>
+        ) : null}
       </div>
       ;
     </>

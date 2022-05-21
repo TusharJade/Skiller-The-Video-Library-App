@@ -25,14 +25,14 @@ const SingleVideoPage = () => {
       <Sidebar />
       <section className="single-video-outerbox">
         <div className="single-video-premiumbox">
-          {<SingleVideo item={singleVideoData} />}
+          {<SingleVideo video={singleVideoData} />}
         </div>
         <div className="horizon-cards-box">
           <div className="suggested-video-text">Suggested videos</div>
           {filterOutSingleVideo
             .sort(() => Math.random() - Math.random())
             .map((item) => {
-              return <HorizontalVideo video={item} />;
+              return <HorizontalVideo key={item._id} video={item} />;
             })}
         </div>
       </section>

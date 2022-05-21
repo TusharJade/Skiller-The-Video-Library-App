@@ -26,8 +26,8 @@
 }
 
 .video-playlist-play{
-   width: 2.2rem;
-   margin-left: 0.4rem;
+   width: 2rem;
+   margin-left: 2px;
    filter: opacity(0.4) drop-shadow(0 0 0 rgba(255, 255, 255, 0.499)); 
 }
 

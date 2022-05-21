@@ -1,10 +1,11 @@
 import "./HistoryPage.css";
+import { Link } from "react-router-dom";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
-import { useGlobalFilterContext } from "../../context/globle-filters-context";
 import { HisoryCard } from "../../components/HisoryCard/HisoryCard";
+import { useHistoryContext } from "../../context/history-context";
 
 const HistoryPage = () => {
-  const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();
+  const { history, clearHistory } = useHistoryContext();
   return (
     <>
       <Sidebar />
@@ -13,23 +14,33 @@ const HistoryPage = () => {
           <div>
             <div className="liked-text">History</div>
             <div className="liked-video-num">
-              {globalFilterState.history.length}{" "}
-              {globalFilterState.history.length <= 1 ? "video" : "videos"}
+              {history.length} {history.length <= 1 ? "video" : "videos"}
             </div>
           </div>
-          <button
-            className="clear-history"
-            onClick={() => globalFilterDispach({ type: "Clear History" })}
-          >
-            Clear History
-          </button>
+          {history.length === 0 ? null : (
+            <button className="clear-history" onClick={() => clearHistory()}>
+              Clear History
+            </button>
+          )}
         </div>
 
-        <div className="video-outer-grid">
-          {globalFilterState.history.map((item) => (
-            <HisoryCard key={item._id} video={item} />
-          ))}
-        </div>
+        {history.length === 0 ? null : (
+          <div className="video-outer-grid">
+            {history.map((item) => (
+              <HisoryCard key={item._id} video={item} />
+            ))}
+          </div>
+        )}
+
+        {history.length === 0 ? (
+          <div className="empty-box-outer">
+            <img src="./assets/empty.png" alt="error" className="empty-box" />
+            <div className="empty-box-text">You didn't watch anything yet</div>
+            <Link to="/" className="empty-box-btn">
+              Watch videos
+            </Link>
+          </div>
+        ) : null}
       </div>
     </>
   );

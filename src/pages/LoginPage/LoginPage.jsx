@@ -71,9 +71,7 @@ const LoginPage = () => {
 
   return (
     <>
-      {/* <div className="sidebar-box"> */}
       <Sidebar />
-      {/* </div> */}
       <form className="login-outerbox" onSubmit={singupSubmiter}>
         <div className="login-container">
           <div className="login-text">Login</div>

@@ -16,6 +16,37 @@
     display: flex;
 }
 
+.empty-box-outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    color: var(--empty-msg);
+    flex-direction: column;
+}
+
+.empty-box{
+    width: 6rem;
+}
+
+.empty-box-text{
+     color: var(--empty-msg);
+     margin: 0.5rem;
+     font-size: 14.5px;
+}
+
+.empty-box-btn{
+    background-color: #f89b59;
+    font-weight: 600;
+    font-size: 15.3px;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 5rem;
+    margin-top: 5px;
+    text-decoration: none;
+    color: black;
+}
+
 
 @media (max-width:637px) {
     .clear-history{
@@ -24,5 +55,9 @@
 
     .history-counter{
         margin-bottom: 0.5rem;
+    }
+
+    .empty-box-outer{
+        height: 35vh;
     }
 }

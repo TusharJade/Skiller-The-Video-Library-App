@@ -1,12 +1,17 @@
 import "./HorizontalVideo.css";
 import { useNavigate } from "react-router-dom";
+import { useHistoryContext } from "../../context/history-context";
 
 const HorizontalVideo = ({ video }) => {
   const navigate = useNavigate();
+  const { addToHistory } = useHistoryContext();
   return (
     <div
       className="horizontal-outerbox"
-      onClick={() => navigate(`/video/${video._id}`)}
+      onClick={() => {
+        navigate(`/video/${video._id}`);
+        addToHistory(video);
+      }}
     >
       <img
         className="horizontal-img-box"

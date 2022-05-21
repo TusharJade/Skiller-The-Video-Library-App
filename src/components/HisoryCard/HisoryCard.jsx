@@ -1,10 +1,10 @@
 import "../VideoThumbnail/VideoThumbnail.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useGlobalFilterContext } from "../../context/globle-filters-context";
+import { useHistoryContext } from "../../context/history-context";
 
 const HisoryCard = ({ video }) => {
-  const { globalFilterState, globalFilterDispach } = useGlobalFilterContext();
+  const { removeFromHistory } = useHistoryContext();
 
   const [showOnClick, setShowOnClick] = useState(false);
 
@@ -15,7 +15,6 @@ const HisoryCard = ({ video }) => {
       className="video-thumbnail-box"
       onClick={() => {
         navigate(`/video/${video._id}`);
-        globalFilterDispach({ type: "Add to History", payload: video });
       }}
     >
       <img
@@ -58,22 +57,15 @@ const HisoryCard = ({ video }) => {
         </div>
         {showOnClick && (
           <div className="toggle-menu">
-            {globalFilterState.history.find(
-              (item) => item._id === video._id
-            ) ? (
-              <div
-                className="hover-Effect remove-from-history"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  globalFilterDispach({
-                    type: "Remove from History",
-                    payload: video._id,
-                  });
-                }}
-              >
-                <i className="fa-solid fa-trash add"></i>Remove from History
-              </div>
-            ) : null}
+            <div
+              className="hover-Effect remove-from-history"
+              onClick={(e) => {
+                e.stopPropagation();
+                removeFromHistory(video._id);
+              }}
+            >
+              <i className="fa-solid fa-trash add"></i>Remove from History
+            </div>
           </div>
         )}
       </div>
