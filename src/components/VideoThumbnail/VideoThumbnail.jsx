@@ -5,6 +5,7 @@ import { VideoThumbnailModal } from "../VideoThumbnailModal/VideoThumbnailModal"
 import { useHistoryContext } from "../../context/history-context";
 import { useLikeContext } from "../../context/like-context";
 import { useWatchLaterContext } from "../../context/watch-later-context";
+import { useAuthContext } from "../../context/auth-context";
 
 const VideoThumbnail = ({ video }) => {
   const { addToHistory } = useHistoryContext();
@@ -13,6 +14,8 @@ const VideoThumbnail = ({ video }) => {
     useWatchLaterContext();
 
   const { like, addToLike, removeFromLike } = useLikeContext();
+
+  const { auth } = useAuthContext();
 
   const [showOnClick, setShowOnClick] = useState({
     modal: false,
@@ -27,7 +30,7 @@ const VideoThumbnail = ({ video }) => {
         className="video-thumbnail-box"
         onClick={() => {
           navigate(`/video/${video._id}`);
-          addToHistory(video);
+          if (auth.loginStatus) addToHistory(video);
         }}
       >
         <img
@@ -86,7 +89,9 @@ const VideoThumbnail = ({ video }) => {
                   className="hover-Effect"
                   onClick={(e) => {
                     e.stopPropagation();
-                    addToWatchLater(video);
+                    auth.loginStatus
+                      ? addToWatchLater(video)
+                      : navigate("/login");
                   }}
                 >
                   <i className="fa-solid fa-clock add"></i>
@@ -98,11 +103,13 @@ const VideoThumbnail = ({ video }) => {
                 className="hover-Effect"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setShowOnClick((item) => ({
-                    ...item,
-                    modal: !item.modal,
-                    modalPlaylist: !item.modalPlaylist,
-                  }));
+                  auth.loginStatus
+                    ? setShowOnClick((item) => ({
+                        ...item,
+                        modal: !item.modal,
+                        modalPlaylist: !item.modalPlaylist,
+                      }))
+                    : navigate("/login");
                 }}
               >
                 <i className="fa-solid fa-circle-plus add"></i>Add to Playlist
@@ -123,7 +130,7 @@ const VideoThumbnail = ({ video }) => {
                   className="hover-Effect"
                   onClick={(e) => {
                     e.stopPropagation();
-                    addToLike(video);
+                    auth.loginStatus ? addToLike(video) : navigate("/login");
                   }}
                 >
                   <i className="fa-solid fa-heart add"></i>Like

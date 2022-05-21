@@ -1,14 +1,20 @@
 import "./SingleVideo.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { VideoThumbnailModal } from "../../components/VideoThumbnailModal/VideoThumbnailModal";
 import { useWatchLaterContext } from "../../context/watch-later-context";
 import { useLikeContext } from "../../context/like-context";
+import { useAuthContext } from "../../context/auth-context";
 
 const SingleVideo = ({ video }) => {
   const { watchLater, addToWatchLater, removeFromWatchLater } =
     useWatchLaterContext();
 
   const { like, addToLike, removeFromLike } = useLikeContext();
+
+  const { auth } = useAuthContext();
+
+  const navigate = useNavigate();
 
   const [showOnClick, setShowOnClick] = useState({
     modalPlaylist: false,
@@ -38,7 +44,9 @@ const SingleVideo = ({ video }) => {
         ) : (
           <div
             className="single-video-parent-btn"
-            onClick={() => addToLike(video)}
+            onClick={() =>
+              auth.loginStatus ? addToLike(video) : navigate("/login")
+            }
           >
             <i className="fa-solid fa-heart single-video-heart"></i>
             <span>&nbsp; Like</span>
@@ -56,7 +64,9 @@ const SingleVideo = ({ video }) => {
         ) : (
           <div
             className="single-video-parent-btn"
-            onClick={() => addToWatchLater(video)}
+            onClick={() =>
+              auth.loginStatus ? addToWatchLater(video) : navigate("/login")
+            }
           >
             <i className="fa-solid fa-clock add"></i>
             <span> Watch Later</span>
@@ -66,14 +76,19 @@ const SingleVideo = ({ video }) => {
         <div
           className="single-video-parent-btn"
           onClick={() =>
-            setShowOnClick((item) => ({ ...item, modalPlaylist: true }))
+            auth.loginStatus
+              ? setShowOnClick((item) => ({ ...item, modalPlaylist: true }))
+              : navigate("/login")
           }
         >
           <i className="fa-solid fa-folder-plus"></i>
           <span> &nbsp;Save</span>
         </div>
         <div
-          onClick={() => navigator.clipboard.writeText(`${video.videoLink}`)}
+          onClick={() => {
+            navigator.clipboard.writeText(`${video.videoLink}`);
+            alert("Video link is copied");
+          }}
           className="single-video-parent-btn"
         >
           <i className="fa-solid fa-clipboard"></i>
