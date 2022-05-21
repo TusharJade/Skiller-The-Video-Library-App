@@ -1,10 +1,14 @@
 import "./Sidebar.css";
 import { NavLink } from "react-router-dom";
+import { useAuthContext } from "../../context/auth-context";
 
 const Sidebar = () => {
+  const { auth } = useAuthContext();
+
   const changeColor = ({ isActive }) => {
     return isActive ? "active-navlink" : "not-active";
   };
+
   return (
     <nav className="main-sidebar">
       <ul className="sider-ul">
@@ -49,7 +53,10 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li className="profile">
-          <NavLink className={changeColor} to="/profile">
+          <NavLink
+            className={changeColor}
+            to={auth.loginStatus ? "/profile" : "/login"}
+          >
             <div className="list-sidebar">
               <i className="fa-solid fa-user sider-icn"></i>
               <div className="sidebar-icn-name">Profile</div>

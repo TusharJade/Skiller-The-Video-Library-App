@@ -1,0 +1,26 @@
+.profile-btn-color{
+    color: var(--white);
+    font-size: 1.3rem;
+}
+
+.profile-btn-name{
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.profile-outerbox{
+    margin-top: 6rem;
+}
+
+.profile-icn{
+   margin: 0 1rem 1.3rem 1.8rem;
+}
+
+.logout-profile{
+    color: var(--red);
+}
+
+.logout-margin{
+    margin-left: 2rem;
+    font-size: 1.5rem;
+}

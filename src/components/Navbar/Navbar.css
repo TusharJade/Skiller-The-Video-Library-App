@@ -99,12 +99,24 @@
 
 @media(max-width: 470px){
     .main-logo{
-        width: 2.3rem;
+        width: 2.7rem;
+        margin-left: 10px;
     }
+
     .nav-input{
-        width: 7rem;
+        width: 15rem;
     }
+
     .skiller{
         display: none;
+    }
+
+    .login-btn{
+        display: none;
+    }
+
+    .search-outerbox{
+        margin-right: 1rem;
+        width: auto;
     }
 }

@@ -11,6 +11,7 @@ import { PlaylistVideosPage } from "./pages/PlaylistVideosPage/PlaylistVideosPag
 import { Route, Routes } from "react-router-dom";
 import MockmanEs from "mockman-js";
 import { PlaylistPage } from "./pages/PlaylistPage/PlaylistPage";
+import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/mockman" element={<MockmanEs />} />
       </Routes>
     </div>
