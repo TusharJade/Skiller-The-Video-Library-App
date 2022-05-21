@@ -18,28 +18,43 @@ const WatchLaterContextProvider = ({ children }) => {
   useEffect(() => {
     if (auth.loginStatus) {
       (async () => {
-        const response = await axios.get("/api/user/watchlater", customHeader);
-        setWatchLater(response.data.watchlater);
+        try {
+          const response = await axios.get(
+            "/api/user/watchlater",
+            customHeader
+          );
+          setWatchLater(response.data.watchlater);
+        } catch (error) {
+          console.log(error);
+        }
       })();
     } else setWatchLater([]);
   }, [auth]);
 
   const addToWatchLater = async (video) => {
-    const response = await axios.post(
-      "/api/user/watchlater",
-      { video },
-      customHeader
-    );
+    try {
+      const response = await axios.post(
+        "/api/user/watchlater",
+        { video },
+        customHeader
+      );
 
-    setWatchLater(response.data.watchlater);
+      setWatchLater(response.data.watchlater);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const removeFromWatchLater = async (videoId) => {
-    const response = await axios.delete(
-      `/api/user/watchlater/${videoId}`,
-      customHeader
-    );
-    setWatchLater(response.data.watchlater);
+    try {
+      const response = await axios.delete(
+        `/api/user/watchlater/${videoId}`,
+        customHeader
+      );
+      setWatchLater(response.data.watchlater);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

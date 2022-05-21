@@ -18,29 +18,41 @@ const LikeContextProvider = ({ children }) => {
   useEffect(() => {
     if (auth.loginStatus) {
       (async () => {
-        const response = await axios.get("/api/user/likes", customHeader);
-        setLike(response.data.likes);
+        try {
+          const response = await axios.get("/api/user/likes", customHeader);
+          setLike(response.data.likes);
+        } catch (error) {
+          console.log(error);
+        }
       })();
     } else setLike([]);
   }, [auth]);
 
   const addToLike = async (video) => {
-    const response = await axios.post(
-      "/api/user/likes",
-      { video },
-      customHeader
-    );
+    try {
+      const response = await axios.post(
+        "/api/user/likes",
+        { video },
+        customHeader
+      );
 
-    setLike(response.data.likes);
+      setLike(response.data.likes);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const removeFromLike = async (videoId) => {
-    const response = await axios.delete(
-      `/api/user/likes/${videoId}`,
-      customHeader
-    );
+    try {
+      const response = await axios.delete(
+        `/api/user/likes/${videoId}`,
+        customHeader
+      );
 
-    setLike(response.data.likes);
+      setLike(response.data.likes);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

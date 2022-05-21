@@ -18,64 +18,84 @@ const PlaylistContextProvider = ({ children }) => {
   useEffect(() => {
     if (auth.loginStatus) {
       (async () => {
-        const response = await axios.get("/api/user/playlists", customHeader);
-        setPlaylist(response.data.playlists);
+        try {
+          const response = await axios.get("/api/user/playlists", customHeader);
+          setPlaylist(response.data.playlists);
+        } catch (error) {
+          console.log(error);
+        }
       })();
     } else setPlaylist([]);
   }, [auth]);
 
   const createCustomPlaylist = async (nameOfPlaylist) => {
-    const response = await axios.post(
-      "/api/user/playlists",
-      {
-        playlist: {
-          playlistName: nameOfPlaylist,
+    try {
+      const response = await axios.post(
+        "/api/user/playlists",
+        {
+          playlist: {
+            playlistName: nameOfPlaylist,
+          },
         },
-      },
-      customHeader
-    );
+        customHeader
+      );
 
-    setPlaylist(response.data.playlists);
+      setPlaylist(response.data.playlists);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const deleteCustomPlaylist = async (playlistId) => {
-    const response = await axios.delete(
-      `/api/user/playlists/${playlistId}`,
-      customHeader
-    );
+    try {
+      const response = await axios.delete(
+        `/api/user/playlists/${playlistId}`,
+        customHeader
+      );
 
-    setPlaylist(response.data.playlists);
+      setPlaylist(response.data.playlists);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const addToPlaylist = async (playlistId, video) => {
-    const response = await axios.post(
-      `/api/user/playlists/${playlistId}`,
-      { video },
-      customHeader
-    );
+    try {
+      const response = await axios.post(
+        `/api/user/playlists/${playlistId}`,
+        { video },
+        customHeader
+      );
 
-    setPlaylist((item) =>
-      item.map((addItem) =>
-        addItem._id === response.data.playlist._id
-          ? response.data.playlist
-          : addItem
-      )
-    );
+      setPlaylist((item) =>
+        item.map((addItem) =>
+          addItem._id === response.data.playlist._id
+            ? response.data.playlist
+            : addItem
+        )
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const removeFromPlaylist = async (playlistId, videoId) => {
-    const response = await axios.delete(
-      `/api/user/playlists/${playlistId}/${videoId}`,
-      customHeader
-    );
+    try {
+      const response = await axios.delete(
+        `/api/user/playlists/${playlistId}/${videoId}`,
+        customHeader
+      );
 
-    setPlaylist((item) =>
-      item.map((removeItem) =>
-        removeItem._id === response.data.playlist._id
-          ? response.data.playlist
-          : removeItem
-      )
-    );
+      setPlaylist((item) =>
+        item.map((removeItem) =>
+          removeItem._id === response.data.playlist._id
+            ? response.data.playlist
+            : removeItem
+        )
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

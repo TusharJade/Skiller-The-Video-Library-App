@@ -18,34 +18,53 @@ const HistoryContextProvider = ({ children }) => {
   useEffect(() => {
     if (auth.loginStatus) {
       (async () => {
-        const response = await axios.get("/api/user/history", customHeader);
-        setHistory(response.data.history);
+        try {
+          const response = await axios.get("/api/user/history", customHeader);
+          setHistory(response.data.history);
+        } catch (error) {
+          console.log(error);
+        }
       })();
     } else setHistory([]);
   }, [auth]);
 
   const addToHistory = async (video) => {
-    const response = await axios.post(
-      "/api/user/history",
-      {
-        video,
-      },
-      customHeader
-    );
-    setHistory(response.data.history);
+    try {
+      const response = await axios.post(
+        "/api/user/history",
+        {
+          video,
+        },
+        customHeader
+      );
+      setHistory(response.data.history);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const removeFromHistory = async (videoId) => {
-    const response = await axios.delete(
-      `/api/user/history/${videoId}`,
-      customHeader
-    );
-    setHistory(response.data.history);
+    try {
+      const response = await axios.delete(
+        `/api/user/history/${videoId}`,
+        customHeader
+      );
+      setHistory(response.data.history);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const clearHistory = async () => {
-    const response = await axios.delete("/api/user/history/all", customHeader);
-    setHistory(response.data.history);
+    try {
+      const response = await axios.delete(
+        "/api/user/history/all",
+        customHeader
+      );
+      setHistory(response.data.history);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
