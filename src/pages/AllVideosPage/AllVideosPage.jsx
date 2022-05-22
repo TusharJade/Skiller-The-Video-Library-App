@@ -5,7 +5,7 @@ import { useVideoContext } from "../../context/video-context";
 import { useState } from "react";
 
 const AllVideosPage = () => {
-  const { video } = useVideoContext();
+  const { video, search, setSearch } = useVideoContext();
 
   const [videoState, setVideoState] = useState("");
 
@@ -15,7 +15,17 @@ const AllVideosPage = () => {
       : video.filter((item) => item.category === videoState);
   };
 
-  const filteredData = filterByCategory(video, videoState);
+  const searchFunc = (allVideo, searchObj) => {
+    return searchObj.searchStatus === true
+      ? allVideo.filter((item) =>
+          item.description
+            .toLowerCase()
+            .includes(searchObj.searchName.toLowerCase())
+        )
+      : allVideo;
+  };
+
+  const filteredData = filterByCategory(searchFunc(video, search), videoState);
 
   return (
     <>
@@ -26,6 +36,7 @@ const AllVideosPage = () => {
             className={`btn-by-filter ${videoState === "" ? "onselect" : null}`}
             onClick={() => {
               setVideoState("");
+              setSearch((item) => ({ ...item, searchStatus: false }));
             }}
           >
             All
@@ -36,6 +47,7 @@ const AllVideosPage = () => {
             }`}
             onClick={() => {
               setVideoState("communication");
+              setSearch((item) => ({ ...item, searchStatus: false }));
             }}
           >
             Communication
@@ -46,6 +58,7 @@ const AllVideosPage = () => {
             }`}
             onClick={() => {
               setVideoState("video editing");
+              setSearch((item) => ({ ...item, searchStatus: false }));
             }}
           >
             Video Editing
@@ -56,6 +69,7 @@ const AllVideosPage = () => {
             }`}
             onClick={() => {
               setVideoState("photography");
+              setSearch((item) => ({ ...item, searchStatus: false }));
             }}
           >
             Photography
@@ -66,6 +80,7 @@ const AllVideosPage = () => {
             }`}
             onClick={() => {
               setVideoState("graphic design");
+              setSearch((item) => ({ ...item, searchStatus: false }));
             }}
           >
             Graphic Design
@@ -76,17 +91,16 @@ const AllVideosPage = () => {
             }`}
             onClick={() => {
               setVideoState("sales");
+              setSearch((item) => ({ ...item, searchStatus: false }));
             }}
           >
             Sales
           </button>
         </div>
         <div className="video-outer-grid">
-          {filteredData
-            .sort(() => Math.random() - Math.random())
-            .map((item) => {
-              return <VideoThumbnail key={item._id} video={item} />;
-            })}
+          {filteredData.map((item) => {
+            return <VideoThumbnail key={item._id} video={item} />;
+          })}
         </div>
       </section>
     </>

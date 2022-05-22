@@ -6,6 +6,10 @@ const VideoContext = createContext(null);
 
 const VideoContextProvider = ({ children }) => {
   const [video, setVideo] = useState([]);
+  const [search, setSearch] = useState({
+    searchName: "",
+    searchStatus: false,
+  });
 
   useEffect(() => {
     const getAllVideos = async () => {
@@ -21,7 +25,7 @@ const VideoContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <VideoContext.Provider value={{ video, setVideo }}>
+    <VideoContext.Provider value={{ video, setVideo, search, setSearch }}>
       {children}
     </VideoContext.Provider>
   );
