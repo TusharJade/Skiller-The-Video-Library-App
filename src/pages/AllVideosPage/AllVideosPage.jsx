@@ -1,6 +1,5 @@
 import "./AllVideosPage.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { VideoThumbnail } from "../../components/VideoThumbnail/VideoThumbnail";
 import { useVideoContext } from "../../context/video-context";
