@@ -1,8 +1,9 @@
 import "./AllVideosPage.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { VideoThumbnail } from "../../components/VideoThumbnail/VideoThumbnail";
 import { useVideoContext } from "../../context/video-context";
-import { useState } from "react";
 
 const AllVideosPage = () => {
   const { video, search, setSearch } = useVideoContext();
@@ -102,6 +103,12 @@ const AllVideosPage = () => {
             return <VideoThumbnail key={item._id} video={item} />;
           })}
         </div>
+        {filteredData.length === 0 ? (
+          <div className="empty-box-outer">
+            <img src="./assets/empty.png" alt="error" className="empty-box" />
+            <div className="empty-box-text">No videos found</div>
+          </div>
+        ) : null}
       </section>
     </>
   );

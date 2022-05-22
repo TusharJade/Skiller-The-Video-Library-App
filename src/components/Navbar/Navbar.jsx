@@ -21,6 +21,7 @@ const Navbar = () => {
     });
     navigate("/login");
   };
+
   return (
     <header className="main-navbar">
       <Link
@@ -41,10 +42,19 @@ const Navbar = () => {
           onChange={(e) =>
             setSearch((item) => ({ ...item, searchName: e.target.value }))
           }
+          onKeyPress={(e) => {
+            return e.key === "Enter"
+              ? (setSearch((item) => ({ ...item, searchStatus: true })),
+                navigate("/"))
+              : null;
+          }}
         />
         <i
           className="fas fa-search nav-search"
-          onClick={() => setSearch((item) => ({ ...item, searchStatus: true }))}
+          onClick={() => {
+            setSearch((item) => ({ ...item, searchStatus: true }));
+            navigate("/");
+          }}
         ></i>
       </div>
       {auth.loginStatus ? (
