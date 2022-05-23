@@ -29,7 +29,7 @@ const SingleVideoPage = () => {
         console.log(error);
       }
     })();
-  }, []);
+  }, [videoId]);
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -44,9 +44,11 @@ const SingleVideoPage = () => {
         </div>
         <div className="horizon-cards-box">
           <div className="suggested-video-text">Suggested videos</div>
-          {filterOutSingleVideo.map((item) => {
-            return <HorizontalVideo key={item._id} video={item} />;
-          })}
+          {filterOutSingleVideo
+            .sort(() => Math.random() - Math.random())
+            .map((item) => {
+              return <HorizontalVideo key={item._id} video={item} />;
+            })}
         </div>
       </section>
     </div>
