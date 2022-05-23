@@ -102,11 +102,13 @@ const AllVideosPage = () => {
             return <VideoThumbnail key={item._id} video={item} />;
           })}
         </div>
-        {filteredData.length === 0 ? (
-          <div className="empty-box-outer">
-            <img src="./assets/empty.png" alt="error" className="empty-box" />
-            <div className="empty-box-text">No videos found</div>
-          </div>
+        {search.searchStatus ? (
+          filteredData.length === 0 ? (
+            <div className="empty-box-outer">
+              <img src="./assets/empty.png" alt="error" className="empty-box" />
+              <div className="empty-box-text">No videos found</div>
+            </div>
+          ) : null
         ) : null}
       </section>
     </>
