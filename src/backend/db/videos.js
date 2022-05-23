@@ -7,9 +7,9 @@ import { v4 as uuid } from "uuid";
 
 export const videos = [
   {
-    _id: uuid(),
+    _id: "7bWdJX4dnew",
     thumbnailImg: "https://img.youtube.com/vi/7bWdJX4dnew/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/7bWdJX4dnew",
+    videoLink: "https://www.youtube-nocookie.com/embed/7bWdJX4dnew/?autoplay=1",
     description:
       "Video Editing Before and After: After Effects Behind the Scenes (VFX) | Roy Adin",
     creatorsLogo:
@@ -21,9 +21,9 @@ export const videos = [
     time: "2 years",
   },
   {
-    _id: uuid(),
+    _id: "6pY7EjqD3QA",
     thumbnailImg: "https://img.youtube.com/vi/6pY7EjqD3QA/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/6pY7EjqD3QA",
+    videoLink: "https://www.youtube-nocookie.com/embed/6pY7EjqD3QA/?autoplay=1",
     description:
       "The four-letter code to selling anything | Derek Thompson | TEDxBinghamtonUniversity",
     creatorsLogo:
@@ -35,9 +35,9 @@ export const videos = [
     time: "3 years",
   },
   {
-    _id: uuid(),
+    _id: "byDNMLTuOqI",
     thumbnailImg: "https://img.youtube.com/vi/byDNMLTuOqI/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/byDNMLTuOqI",
+    videoLink: "https://www.youtube-nocookie.com/embed/byDNMLTuOqI/?autoplay=1",
     description:
       "‘Colour’ Visual element of Graphic Design / Design theory Ep3/45 [Beginners guide to Graphic Design]",
     creatorsLogo:
@@ -49,9 +49,9 @@ export const videos = [
     time: "2 years",
   },
   {
-    _id: uuid(),
+    _id: "N5Zi_G2MTHw",
     thumbnailImg: "https://img.youtube.com/vi/N5Zi_G2MTHw/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/N5Zi_G2MTHw",
+    videoLink: "https://www.youtube-nocookie.com/embed/N5Zi_G2MTHw/?autoplay=1",
     description: "Why Listening is Better Than Talking | Brian Tracy",
     creatorsLogo:
       "https://yt3.ggpht.com/ytc/AKedOLSR1-iR0FfdYGEqZj5slytUw7z628az9maQ05SQNg=s88-c-k-c0x00ffffff-no-rj",
@@ -62,9 +62,9 @@ export const videos = [
     time: "1 year",
   },
   {
-    _id: uuid(),
+    _id: "ujaCbzLwuB8",
     thumbnailImg: "https://img.youtube.com/vi/ujaCbzLwuB8/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/ujaCbzLwuB8",
+    videoLink: "https://www.youtube-nocookie.com/embed/ujaCbzLwuB8/?autoplay=1",
     description:
       "Learn Photography - Simple, Practical - Free Photography Course 1/10",
     creatorsLogo:
@@ -77,9 +77,9 @@ export const videos = [
     date: "13 Jun 2016",
   },
   {
-    _id: uuid(),
+    _id: "d536ca4BzRs",
     thumbnailImg: "https://img.youtube.com/vi/d536ca4BzRs/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/d536ca4BzRs",
+    videoLink: "https://www.youtube-nocookie.com/embed/d536ca4BzRs/?autoplay=1",
     description:
       "How To Sell ANYTHING to ANYONE in HINDI | बेचने की कला सीखो ! Sales Motivation !",
     creatorsLogo:
@@ -91,9 +91,9 @@ export const videos = [
     time: "10 months",
   },
   {
-    _id: uuid(),
+    _id: "My1Z2_e4EPI",
     thumbnailImg: "https://img.youtube.com/vi/My1Z2_e4EPI/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/My1Z2_e4EPI",
+    videoLink: "https://www.youtube-nocookie.com/embed/My1Z2_e4EPI/?autoplay=1",
     description:
       "Get off 'Auto' mode - Photography Basics: Photography Course 2/10",
     creatorsLogo:
@@ -106,9 +106,9 @@ export const videos = [
     date: "17 sep 2016",
   },
   {
-    _id: uuid(),
+    _id: "oS1BlGm91Bs",
     thumbnailImg: "https://img.youtube.com/vi/oS1BlGm91Bs/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/oS1BlGm91Bs",
+    videoLink: "https://www.youtube-nocookie.com/embed/oS1BlGm91Bs/?autoplay=1",
     description:
       "Learn Video Editing Full Course For Beginners Step By Step Guide",
     creatorsLogo:
@@ -120,9 +120,9 @@ export const videos = [
     time: "1 years",
   },
   {
-    _id: uuid(),
+    _id: "5V4uuNdmRHc",
     thumbnailImg: "https://img.youtube.com/vi/5V4uuNdmRHc/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/5V4uuNdmRHc",
+    videoLink: "https://www.youtube-nocookie.com/embed/5V4uuNdmRHc/?autoplay=1",
     description: "Top 10 Composition Tips - Photography Course 3/10",
     creatorsLogo:
       "https://yt3.ggpht.com/ocTn4Jj8pvGDh4ZHVuu5tWytVKUGF5mYrNc1nnP_ywBAMM6f4JngWFQuPD_g8SZvQzRGa00Xyg=s88-c-k-c0x00ffffff-no-rj",
@@ -134,9 +134,9 @@ export const videos = [
     date: "11 May 2016",
   },
   {
-    _id: uuid(),
+    _id: "dFSia1LZI4Y",
     thumbnailImg: "https://img.youtube.com/vi/dFSia1LZI4Y/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/dFSia1LZI4Y",
+    videoLink: "https://www.youtube-nocookie.com/embed/dFSia1LZI4Y/?autoplay=1",
     description:
       "What is Graphic Design? Ep1/45 [Beginners Guide to Graphic Design]",
     creatorsLogo:
@@ -148,9 +148,9 @@ export const videos = [
     time: "2 years",
   },
   {
-    _id: uuid(),
+    _id: "jmY3Nac26yc",
     thumbnailImg: "https://img.youtube.com/vi/jmY3Nac26yc/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/jmY3Nac26yc",
+    videoLink: "https://www.youtube-nocookie.com/embed/jmY3Nac26yc/?autoplay=1",
     description:
       "Perfect Exposure & Metering made EASY - Photography Course 4/10",
     creatorsLogo:
@@ -163,9 +163,9 @@ export const videos = [
     date: "11 May 2019",
   },
   {
-    _id: uuid(),
+    _id: "HAnw168huqA",
     thumbnailImg: "https://img.youtube.com/vi/HAnw168huqA/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/HAnw168huqA",
+    videoLink: "https://www.youtube-nocookie.com/embed/HAnw168huqA/?autoplay=1",
     description: "Think Fast, Talk Smart: Communication Techniques",
     creatorsLogo:
       "https://yt3.ggpht.com/ytc/AKedOLRSMpZ9D2BtDJbw9rL4jBf7TvEZaDFgZ49b_Ah16Q=s88-c-k-c0x00ffffff-no-rj",
@@ -176,9 +176,9 @@ export const videos = [
     time: "11 months",
   },
   {
-    _id: uuid(),
+    _id: "LxO-6rlihSg",
     thumbnailImg: "https://img.youtube.com/vi/LxO-6rlihSg/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/LxO-6rlihSg",
+    videoLink: "https://www.youtube-nocookie.com/embed/LxO-6rlihSg/?autoplay=1",
     description:
       "Learn Photography [Full Course] by Australian Geographic Photographer Chris Bray",
     creatorsLogo:
@@ -191,9 +191,9 @@ export const videos = [
     date: "20 Dec 2016",
   },
   {
-    _id: uuid(),
+    _id: "2Yw6dFQBklA",
     thumbnailImg: "https://img.youtube.com/vi/2Yw6dFQBklA/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/2Yw6dFQBklA",
+    videoLink: "https://www.youtube-nocookie.com/embed/2Yw6dFQBklA/?autoplay=1",
     description:
       "The Art of Effective Communication | Marcus Alexander Velazquez | TEDxWolcottSchool",
     creatorsLogo:
@@ -205,9 +205,9 @@ export const videos = [
     time: "2 years",
   },
   {
-    _id: uuid(),
+    _id: "ywwg-H1otaY",
     thumbnailImg: "https://img.youtube.com/vi/ywwg-H1otaY/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/ywwg-H1otaY",
+    videoLink: "https://www.youtube-nocookie.com/embed/ywwg-H1otaY/?autoplay=1",
     description: "SALES Is Just Like DATING | Simon Sinek",
     creatorsLogo:
       "https://yt3.ggpht.com/ytc/AKedOLRWK-7SEE7uTtp3PTvRHClj1yGpZLruhkD8pyGoQw=s88-c-k-c0x00ffffff-no-rj",
@@ -218,9 +218,9 @@ export const videos = [
     time: "1 years",
   },
   {
-    _id: uuid(),
+    _id: "-6Tt46y6nAs",
     thumbnailImg: "https://img.youtube.com/vi/-6Tt46y6nAs/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/-6Tt46y6nAs",
+    videoLink: "https://www.youtube-nocookie.com/embed/-6Tt46y6nAs/?autoplay=1",
     description: "Top 5 Best Video Editing Apps⚡January 2022",
     creatorsLogo:
       "https://yt3.ggpht.com/EYXEN3n0cfYgs_zDqlSVk8JY1y6gLrzfmdV17uce1zkMEKRoH7VlLwaptPBh6zBk_ie-c7Qw=s88-c-k-c0x00ffffff-no-rj",
@@ -231,9 +231,9 @@ export const videos = [
     time: "1 years",
   },
   {
-    _id: uuid(),
+    _id: "xr1q-uBtIH4",
     thumbnailImg: "https://img.youtube.com/vi/xr1q-uBtIH4/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/xr1q-uBtIH4",
+    videoLink: "https://www.youtube-nocookie.com/embed/xr1q-uBtIH4/?autoplay=1",
     description: "5 Ways to Improve your COMMUNICATION Skills",
     creatorsLogo:
       "https://yt3.ggpht.com/ytc/AKedOLQsQBOEYJH18b9JCwChN4KfOcQLPxitNatuPAlhGw=s88-c-k-c0x00ffffff-no-rj",
@@ -244,9 +244,9 @@ export const videos = [
     time: "2 years",
   },
   {
-    _id: uuid(),
+    _id: "5jprIWG8f5g",
     thumbnailImg: "https://img.youtube.com/vi/5jprIWG8f5g/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/5jprIWG8f5g",
+    videoLink: "https://www.youtube-nocookie.com/embed/5jprIWG8f5g/?autoplay=1",
     description:
       "‘Shape’ Visual element of Graphic Design / Design theory Ep4/45 [Beginners guide to Graphic Design]",
     creatorsLogo:
@@ -258,9 +258,9 @@ export const videos = [
     time: "2 years",
   },
   {
-    _id: uuid(),
+    _id: "xQfYiHbAjJo",
     thumbnailImg: "https://img.youtube.com/vi/xQfYiHbAjJo/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/xQfYiHbAjJo",
+    videoLink: "https://www.youtube-nocookie.com/embed/xQfYiHbAjJo/?autoplay=1",
     description: "What Are Communication Skills? Top 10!",
     creatorsLogo:
       "https://yt3.ggpht.com/ytc/AKedOLTlEpryCbdrrlX-1Gjr_L_bUAvMx_b-8EIXHoRGXA=s88-c-k-c0x00ffffff-no-rj",
@@ -271,9 +271,9 @@ export const videos = [
     time: "1 year",
   },
   {
-    _id: uuid(),
+    _id: "c1sKrhPwC24",
     thumbnailImg: "https://img.youtube.com/vi/c1sKrhPwC24/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/c1sKrhPwC24",
+    videoLink: "https://www.youtube-nocookie.com/embed/c1sKrhPwC24/?autoplay=1",
     description:
       "Freelance Video Editor: Earn Rs. 2000/hr! | How to Become a Video Editor",
     creatorsLogo:
@@ -285,9 +285,9 @@ export const videos = [
     time: "2 months",
   },
   {
-    _id: uuid(),
+    _id: "ZUKLrTl22gg",
     thumbnailImg: "https://img.youtube.com/vi/ZUKLrTl22gg/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/ZUKLrTl22gg",
+    videoLink: "https://www.youtube-nocookie.com/embed/ZUKLrTl22gg/?autoplay=1",
     description:
       "Sales Skills And Techniques Explained In Hindi | Ranveer Allahbadia",
     creatorsLogo:
@@ -299,9 +299,9 @@ export const videos = [
     time: "1 years",
   },
   {
-    _id: uuid(),
+    _id: "F0PTse89XIE",
     thumbnailImg: "https://img.youtube.com/vi/F0PTse89XIE/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/F0PTse89XIE",
+    videoLink: "https://www.youtube-nocookie.com/embed/F0PTse89XIE/?autoplay=1",
     description:
       "‘Line’ Visual element of Graphic Design / Design theory Ep2/45 [Beginners guide to Graphic Design]",
     creatorsLogo:
@@ -313,9 +313,9 @@ export const videos = [
     time: "2 years",
   },
   {
-    _id: uuid(),
+    _id: "fOBd_hLOnGI",
     thumbnailImg: "https://img.youtube.com/vi/fOBd_hLOnGI/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/fOBd_hLOnGI",
+    videoLink: "https://www.youtube-nocookie.com/embed/fOBd_hLOnGI/?autoplay=1",
     description: "How to Edit Video Fast in Adobe Premiere Pro | Rachit Singh",
     creatorsLogo:
       "https://yt3.ggpht.com/ytc/AKedOLTyqgtsRL1H85VOwtipJ-bXzA3s5w0NMJAptmfQrg=s88-c-k-c0x00ffffff-no-rj",
@@ -326,9 +326,9 @@ export const videos = [
     time: "1 years",
   },
   {
-    _id: uuid(),
+    _id: "hECQpBM0b0Q",
     thumbnailImg: "https://img.youtube.com/vi/hECQpBM0b0Q/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/hECQpBM0b0Q",
+    videoLink: "https://www.youtube-nocookie.com/embed/hECQpBM0b0Q/?autoplay=1",
     description:
       "‘Texture’ Visual element of Graphic Design Ep5/45 [Beginners guide to Graphic Design]",
     creatorsLogo:
@@ -340,9 +340,9 @@ export const videos = [
     time: "2 years",
   },
   {
-    _id: uuid(),
+    _id: "PwwgGOBw1oE",
     thumbnailImg: "https://img.youtube.com/vi/PwwgGOBw1oE/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/PwwgGOBw1oE",
+    videoLink: "https://www.youtube-nocookie.com/embed/PwwgGOBw1oE/?autoplay=1",
     description: "10 SALES Techniques That Will Make You RICH in 2022!",
     creatorsLogo:
       "https://yt3.ggpht.com/ytc/AKedOLQsQBOEYJH18b9JCwChN4KfOcQLPxitNatuPAlhGw=s88-c-k-c0x00ffffff-no-rj",
