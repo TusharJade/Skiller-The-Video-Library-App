@@ -24,13 +24,11 @@ const HistoryPage = () => {
           )}
         </div>
 
-        {history.length === 0 ? null : (
-          <div className="video-outer-grid">
-            {history.map((item) => (
-              <HisoryCard key={item._id} video={item} />
-            ))}
-          </div>
-        )}
+        <div className="video-outer-grid">
+          {history.map((item) => (
+            <HisoryCard key={item._id} video={item} />
+          ))}
+        </div>
 
         {history.length === 0 ? (
           <div className="empty-box-outer">

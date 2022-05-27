@@ -89,7 +89,7 @@ const SingleVideo = ({ video }) => {
           </div>
           <div
             onClick={() => {
-              navigator.clipboard.writeText(`${video.videoLink}`);
+              navigator.clipboard.writeText(`${window.location.href}`);
               alert("Video link is copied");
             }}
             className="single-video-parent-btn"
